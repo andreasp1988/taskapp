@@ -1,0 +1,18 @@
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    background: #5A55CA;
+    padding: 2vh 0;
+    align-items: center;
+}
+
+nav .selected{
+    background-color: #fff;
+}
+
+nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

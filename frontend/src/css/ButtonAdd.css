@@ -1,0 +1,12 @@
+.buttonAdd{
+    background: rgba(90, 85, 202, 0.5);
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 5px;
+    border:none;
+    padding: 2vh 30%;
+    font-size: 1.875rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-se
+    }
