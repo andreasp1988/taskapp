@@ -1,0 +1,22 @@
+.clearfix {
+   clear: both;
+}
+
+.box {
+   width: 300px;
+   color: #333;
+   border: 2px solid #ddd;
+}
+.title-box {
+   cursor: pointer;
+   padding: 15px;
+   background-color: #ffff;
+}
+.title {
+   width: calc(100% - 20px);
+}
+
+.content {
+   padding: 15px;
+   border-top: 1px solid #ddd;
+}
