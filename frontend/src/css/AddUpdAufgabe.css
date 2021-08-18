@@ -1,3 +1,83 @@
-.addAufgabe nav{
-    margin-top:11vh;
+
+.addAufgabe {
+    padding: 4vh 10% 2vh 8%;
+}
+
+.addAufgabe h1{
+padding-bottom: 5vh;
+text-align: left;
+/* white-space: nowrap; */
+}
+
+
+
+.addAufgabe div{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3vh;
+}
+.addAufgabe label{
+    padding-bottom: .5vh;
+    color: rgba(51, 51, 51, 0.5);
+    font-size: 1.25rem;
+}
+
+
+.addAufgabe section{
+    display: flex;
+}
+
+.addAufgabe input{
+    border: none;
+    border-bottom: 1px solid #333333;
+    background-color: #F0F4FD;
+    font-size: 1.25rem;
+    font-family: Roboto;
+}
+
+.startEnde div{
+    width: 35%;
+    padding-right: 10%;
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+}
+
+.category button{
+    font-size: 1.25rem;
+    color:#333333;
+    font-family: Roboto;
+    white-space: nowrap;
+    margin: 0 4% 1.5vh 0;
+    border: none;
+    border-radius: 5px;
+}
+.category section:nth-of-type(1) button{
+    padding: 1vh 5%;
+}
+
+
+
+.category img{
+    width: 60%;
+}
+
+.category section:nth-of-type(1) button:nth-of-type(1){
+    background-color: #F26950;
+}
+
+.category section:nth-of-type(1) button:nth-of-type(2){
+    background-color: #5A55CA;
+}
+
+.category section:nth-of-type(2) button:nth-of-type(1){
+    background-color: #2CC09C;
+    padding: 0 5% 0 5%;
+}
+
+.category section:nth-of-type(2) button:nth-of-type(2){
+    background-color:  #F0F4FD;
+    padding: 0;
 }
