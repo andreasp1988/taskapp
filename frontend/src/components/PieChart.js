@@ -9,19 +9,17 @@ const PieChart = () => {
       <div>
          <Pie
             data={{
-               labels: ['white', 'Green', 'Purple', 'Orange'],
+               labels: [ 'Ausstehend', 'Fertig', 'In Bearbeitung'],
                datasets: [
                   {
                      label: '# of votes',
-                     data: [20, 10, 10, 10],
+                     data: [10, 10, 10],
                      backgroundColor: [
-                        'rgba(255,255,255, 1)',
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)',
                      ],
                      borderColor: [
-                        'rgba(255,255,255, 1)',
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)',
