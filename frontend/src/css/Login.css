@@ -3,14 +3,7 @@
     flex-direction: column;
 }
 
-.login h2 {
-    text-align: center;
-    font-weight: 500;
-    color: #333333;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    padding-bottom: 6vh;
-}
+
 
 .login a{
     text-decoration: none;
@@ -19,8 +12,3 @@
     padding-left: 13%;
 }
 
-.login .logo img{
-    display: block;
-    margin: 0 auto; 
-    padding: 21vh 0 10vh 0;
-}

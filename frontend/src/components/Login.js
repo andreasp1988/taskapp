@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import ButtonEinlog from "./ButtonEinlog";
 import '../css/Login.css'
+import LoginHeader from "./LoginHeader";
 
 const Login = () => {
     return (
         <div className="login">
-            <section className="logo">
-                <img src="/img/logo.png" alt="" />
-            </section>
-            <h2>Verwalte deine <br />Aufgaben einfacher</h2>
+            <LoginHeader />
             <section className="flex">
                 <ButtonEinlog name="Einloggen mit Google" />
                 <ButtonEinlog name="Einloggen mit Email" />

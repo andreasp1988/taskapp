@@ -1,0 +1,25 @@
+.registration form{
+    display: flex;
+    flex-direction: column;
+}
+
+.registration input{
+    background-color: #fff;
+    margin: 1vh 9%;
+    border-radius: 5px;
+    border:none;
+    padding: 2vh 4%;
+    font-size: 1.25rem; 
+}
+
+input::-webkit-input-placeholder { 
+    color: #000;
+    font: 300 1.25rem Roboto;
+}
+
+.registration input[type="button"]{
+    background: #5A55CA;
+    color: #fff;
+    font-weight: bold;
+    font: bold 1.25rem Roboto;
+}

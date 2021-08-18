@@ -1,11 +1,11 @@
-import ButtonAdd from "./ButtonAdd";
+import ButtonAddUpd from "./ButtonAddUpd";
 import Nav from "./Nav";
-import '../css/AddAufgabe.css'
+import '../css/AddUpdAufgabe.css'
 
 const AddAufgabe = () => {
     return (
         <div className="addAufgabe">
-            <ButtonAdd name="Erstellen" />
+            <ButtonAddUpd name="Erstellen" />
             <Nav />
         </div>
 
