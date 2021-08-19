@@ -1,20 +1,23 @@
 import React, {  useState } from 'react';
 import '../css/Alleaufgaben.css';
 import Modal from './Modal';
-import { Pie } from 'react-chartjs-2';
+import { Pie} from 'react-chartjs-2';
+import { Link } from "react-router-dom";
 
 //defaults.global.tooltips.enabled = false;
-//defaults.global.legend.position = 'bottom';
+//defaults.global.labels.display = 'false';
 const data ={
-   labels: [ 'Ausstehend', 'Fertig', 'In Bearbeitung'],
+   //labels: [ "Alleaufgaben",'Ausstehend', 'Fertig', 'In Bearbeitung'],
    datasets: [
       {
          label: '# of votes',
-         data: ["10", "10", "10"],
+         data: ["5","5", "5", "25"],
          backgroundColor: [
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)',
+            'rgba(255,255,255,1)'
+
          ],
          borderWidth:1
       },
@@ -47,7 +50,7 @@ const hideModal = () =>{
          <div style={{height:"150px",width:"150px"}}>
             <Pie data={data} options={{
                responsive:true,
-               title:{text:"# of votes",display:false }
+               title:{text:"# of votes"}
             }}/>
             </div>
          </div>
@@ -55,26 +58,26 @@ const hideModal = () =>{
          <Accordion title="Alle Aufgaben">
             <form>
                <input type="checkbox" />
-               <label>Wäsche aufhängen <button className="btnInfo" onClick={() =>showModal()}>i</button></label>
+               <label>Wäsche aufhängen <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
                <input type="checkbox" />
-               <label>Einkaufen gehen</label><br/>
+               <label>Einkaufen gehen <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
                <input type="checkbox" />
-               <label>Javascript lernen</label><br/>
+               <label>Javascript lernen <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
                <input type="checkbox" />
-               <label>php mal angucken</label><br/>
+               <label>php mal angucken <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
                <input type="checkbox" />
-               <label>Katze füttern</label><br/>
+               <label>Katze füttern <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
                <input type="checkbox" />
-               <label>Kleiderschrank aussortieren</label>
+               <label>Kleiderschrank aussortieren <button className="btnInfo" onClick={() =>showModal()}>i</button></label>
             </form>
          </Accordion>
          <Modal showModal={openModal} hideModal={hideModal}>
          <div className="Modal">
             <p>Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.</p>
         
-        <button className="modalBtn">Löschen</button>
-        <button className="modalBtn">Erledigt</button>
-        <button className="modalBtn">Bearbeiten</button>
+        <button className="modalBtn1" onClick={hideModal}>Löschen</button><br/>
+        <Link to="/Home"><button className="modalBtn">Erledigt</button><br/></Link>
+        <Link to="/UpdateAufgabe"><button className="modalBtn3">Bearbeiten</button></Link>
         </div>
          </Modal>
       </div>
