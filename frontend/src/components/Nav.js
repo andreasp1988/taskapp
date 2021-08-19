@@ -1,14 +1,13 @@
 import { NavLink } from "react-router-dom";
 import '../css/Nav.css'
 
-
 const Nav = () => {
     return (
-        <nav>
+        < nav >
             <ul>
                 <li>
-                    <NavLink to="/home" activeClassName="selected">
-                        <img src="/img/dashboard.svg" alt="" />
+                    <NavLink to="/home" >
+                        <img src="/img/dashboard_active.svg" alt="Home" />
                     </NavLink>
                 </li>
                 <li>

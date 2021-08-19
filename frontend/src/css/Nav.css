@@ -7,12 +7,13 @@ nav ul {
     align-items: center;
 }
 
-nav .selected{
+/* nav .selected{
     background-color: #fff;
-}
+} */
 
 nav{
     position: fixed;
     bottom: 0;
     width: 100%;
 }
+
