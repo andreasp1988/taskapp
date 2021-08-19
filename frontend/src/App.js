@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import AddAufgabe from './components/AddAufgabe';
 import UpdateAufgabe from './components/UpdateAufgabe';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/registation" component={Registration} />
             <Route path="/addAufgabe" component={AddAufgabe} />
             <Route path="/updateAufgabe" component={UpdateAufgabe} />
+            <Route path="/home" component={Home}/>
           </Switch>
         </div>
       </Router>

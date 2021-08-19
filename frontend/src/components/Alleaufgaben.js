@@ -1,7 +1,28 @@
 import React, {  useState } from 'react';
-import 'aufgaben.css';
+import '../css/Alleaufgaben.css';
 import Modal from './Modal';
+import { Pie } from 'react-chartjs-2';
 
+//defaults.global.tooltips.enabled = false;
+//defaults.global.legend.position = 'bottom';
+const data ={
+   labels: [ 'Ausstehend', 'Fertig', 'In Bearbeitung'],
+   datasets: [
+      {
+         label: '# of votes',
+         data: ["10", "10", "10"],
+         backgroundColor: [
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+         ],
+         borderWidth:1
+      },
+ 
+   ],
+
+
+}
 
 
 const Aufgaben = () => {
@@ -22,7 +43,18 @@ const hideModal = () =>{
 
 
    return (
-      <div className="App">
+
+  
+      <div className="Alleaufgaben">
+         <div className="PieChart">
+         <div style={{height:"150px",width:"150px"}}>
+            <Pie data={data} options={{
+               responsive:true,
+               title:{text:"# of votes",display:false }
+            }}/>
+            </div>
+         </div>
+           
          <Accordion title="Alle Aufgaben">
             <form>
                <input type="checkbox" />
