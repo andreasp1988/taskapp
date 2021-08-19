@@ -1,6 +1,6 @@
 import React from 'react';
-import Alleaufgaben from './Alleaufgaben'
-import Nav from './Nav'
+import Alleaufgaben from './Alleaufgaben';
+import Nav from './Nav';
 import Buttons from './Buttons';
 
 const Home = () => {

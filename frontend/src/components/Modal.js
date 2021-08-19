@@ -1,11 +1,13 @@
 import React from 'react';
 import '../css/Modal.css';
 
-const Modal = ({ showModal, children, hideModal }) => {
+const Modal = ({ showModal, children }) => {
     return (
         showModal && (
-            <div className="ModalContainer" onClick={hideModal}>
+            <div className="ModalContainer">
+                <div className="modalShow">
                 {children}
+                </div>
 
             </div>
         )
