@@ -3,6 +3,8 @@
     flex-direction: column;
 }
 .btn-home1{
+    display:flex;
+    align-items: flex-start;
     width: 300px;
     height: 50px;
     padding: 15px;
@@ -17,6 +19,8 @@
 }
 
 .btn-home2{
+    display:flex;
+    align-items: flex-start;
     width: 300px;
     height: 50px;
     padding: 15px;
@@ -31,6 +35,8 @@
 
 }
 .btn-home3{
+    display:flex;
+    align-items: flex-start;
     width: 300px;
     height: 50px;
     padding: 15px;
