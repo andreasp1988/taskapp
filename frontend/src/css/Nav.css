@@ -7,9 +7,9 @@ nav ul {
     align-items: center;
 }
 
-/* nav .selected{
-    background-color: #fff;
-} */
+nav .selected svg path{
+    fill-opacity:1
+}
 
 nav{
     position: fixed;
