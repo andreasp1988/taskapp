@@ -1,0 +1,33 @@
+.btn-home1{
+    width: 300px;
+    height: 50px;
+    padding: 15px;
+    
+    color: #333;
+    background: #F26950;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-home2{
+    width: 300px;
+    height: 50px;
+    padding: 15px;
+
+    color: #ddd;
+    background: #5A55CA;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+
+}
+.btn-home3{
+    width: 300px;
+    height: 50px;
+    padding: 15px;
+
+    color: #333;
+    background: #2CC09C;
+   border: 2px solid #ddd;
+   border-radius: 5px;
+
+}
