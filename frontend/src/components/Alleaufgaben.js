@@ -39,10 +39,7 @@ const hideModal = () =>{
    setOpenModal(false)
 }
 
-
-
-
-   return (
+ return (
 
   
       <div className="Alleaufgaben">

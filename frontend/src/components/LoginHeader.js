@@ -6,7 +6,7 @@ const LoginHeader = () => {
             <section className="logo">
                 <img src="/img/logo.png" alt="" />
             </section>
-            <h2>Verwalte deine <br />Aufgaben einfacher</h2>
+            <h1>Verwalte deine <br />Aufgaben einfacher</h1>
         </div>
     );
 }
