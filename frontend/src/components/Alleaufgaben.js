@@ -56,7 +56,6 @@ const hideModal = () =>{
          </div>
            
          <Accordion title="Alle Aufgaben">
-            <form>
                <input type="checkbox" />
                <label>Wäsche aufhängen <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
                <input type="checkbox" />
@@ -69,7 +68,7 @@ const hideModal = () =>{
                <label>Katze füttern <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
                <input type="checkbox" />
                <label>Kleiderschrank aussortieren <button className="btnInfo" onClick={() =>showModal()}>i</button></label>
-            </form>
+            
          </Accordion>
          <Modal showModal={openModal} hideModal={hideModal}>
          <div className="Modal">
