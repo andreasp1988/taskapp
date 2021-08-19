@@ -76,7 +76,7 @@ const hideModal = () =>{
             <p>Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.</p>
         
         <button className="modalBtn1" onClick={hideModal}>Löschen</button><br/>
-        <Link to="/Home"><button className="modalBtn">Erledigt</button><br/></Link>
+        <Link to="/home"><button className="modalBtn">Erledigt</button><br/></Link>
         <Link to="/UpdateAufgabe"><button className="modalBtn3">Bearbeiten</button></Link>
         </div>
          </Modal>
