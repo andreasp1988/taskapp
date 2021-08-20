@@ -11,10 +11,14 @@ text-align: left;
 
 
 
-.addAufgabe div{
+.addAufgabe .flex{
     display: flex;
     flex-direction: column;
-    padding-bottom: 3vh;
+    margin-bottom: 3vh;
+}
+
+.react-datepicker-wrapper{
+    border-bottom: 1px solid #333333;
 }
 .addAufgabe label{
     padding-bottom: .5vh;
