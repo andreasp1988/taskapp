@@ -2,6 +2,11 @@ import ButtonAddUpd from "./ButtonAddUpd";
 import Nav from "./Nav";
 import '../css/AddUpdAufgabe.css'
 
+import moment from 'moment';
+import TimePicker from 'rc-time-picker';
+import 'rc-time-picker/assets/index.css';
+
+
 const AddAufgabe = () => {
     return (
         <>
@@ -19,11 +24,11 @@ const AddAufgabe = () => {
                     <section className="startEnde">
                         <div>
                             <label htmlFor="start">Start</label>
-                            <input type="text" name="" id="start" placeholder="10:00" />
+                            <TimePicker defaultValue={moment()} showSecond={false} minuteStep={15} />
                         </div>
                         <div>
                             <label htmlFor="ende">Ende</label>
-                            <input type="text" name="" id="ende" placeholder="13:00" />
+                            <TimePicker defaultValue={moment()} showSecond={false} minuteStep={15} />
                         </div>
                     </section>
                     <div>

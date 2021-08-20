@@ -33,6 +33,10 @@ text-align: left;
     background-color: #F0F4FD;
     font-size: 1.25rem;
     font-family: Roboto;
+    border-radius: 0;
+    padding: 0;
+    color: #333333;
+    outline: none;
 }
 
 .startEnde div{
@@ -81,3 +85,8 @@ text-align: left;
     background-color:  #F0F4FD;
     padding: 0;
 }
+
+.rc-time-picker-clear-icon:after{
+    content: none !important;
+}
+
