@@ -15,6 +15,12 @@ router.post('/', (req, res) => {
         .then(result => res.json(result))
         .catch(err => console.log(err))
 })
+router.get('id', (req, res) => {
+    console.log(req.params.id)
+    User.findById(req.params.id)
+        .then(result => res.json(result))
+        .catch(err => res.json({ message: "User not found" }))
+})
 
 module.exports = router
 
