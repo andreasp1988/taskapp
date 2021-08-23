@@ -17,10 +17,6 @@ text-align: left;
     margin-bottom: 3vh;
 }
 
-.addAufgabe .flexRow{
-    display: flex;
-}
-
 .bg{
     background-image: url("date.svg");
     background-repeat: no-repeat;
@@ -64,7 +60,18 @@ text-align: left;
     flex-direction: column;
 }
 
-.category button{
+
+.category section label{
+    /* display: inline-block; */
+    /* white-space: nowrap; */
+    font-size: 1.25rem;
+    color:#333333;
+    font-family: Roboto;
+    margin: 0 4% 1.5vh 0;
+    border-radius: 5px;
+    padding: 1vh 5%;
+}
+/* .category button{
     font-size: 1.25rem;
     color:#333333;
     font-family: Roboto;
@@ -72,18 +79,18 @@ text-align: left;
     margin: 0 4% 1.5vh 0;
     border: none;
     border-radius: 5px;
-}
-.category section:nth-of-type(1) button{
+} */
+/* .category section:nth-of-type(1) button{
     padding: 1vh 5%;
-}
+} */
 
 
 
 .category img{
-    width: 60%;
+    width: 70%;
 }
 
-.category section:nth-of-type(1) button:nth-of-type(1){
+/* .category section:nth-of-type(1) button:nth-of-type(1){
     background-color: #F26950;
 }
 
@@ -99,7 +106,7 @@ text-align: left;
 .category section:nth-of-type(2) button:nth-of-type(2){
     background-color:  #F0F4FD;
     padding: 0;
-}
+} */
 
 .rc-time-picker-clear-icon:after{
     content: none !important;
@@ -108,3 +115,23 @@ text-align: left;
 .rc-time-picker-clear{
     display: none;
 }
+
+.category input{
+    display: none;
+}
+
+.category section:nth-of-type(1) label:nth-of-type(1){
+    background-color: #F26950;
+}
+
+.category section:nth-of-type(1) label:nth-of-type(2){
+    background-color: #5A55CA;
+}
+
+.category section:nth-of-type(2) label:nth-of-type(1){
+    background-color: #2CC09C;
+}
+
+.category input[type="radio"]:checked+label{ 
+    font-weight: bold;
+  } 
