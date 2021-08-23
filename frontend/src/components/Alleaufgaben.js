@@ -4,6 +4,9 @@ import Modal from './Modal';
 import { Pie} from 'react-chartjs-2';
 import { Link } from "react-router-dom";
 
+
+// chrtsjs in reactjs
+
 //defaults.global.tooltips.enabled = false;
 //defaults.global.labels.display = 'false';
 const data ={
@@ -28,6 +31,8 @@ const data ={
 }
 
 
+
+
 const Aufgaben = () => {
 
    
@@ -47,13 +52,15 @@ const hideModal = () =>{
   
       <div className="Alleaufgaben">
          <div className="PieChart">
-         <div style={{height:"150px",width:"150px"}}>
+         <div style={{height:"200px",width:"200px"}}>
             <Pie data={data} options={{
                responsive:true,
                title:{text:"# of votes"}
             }}/>
             </div>
          </div>
+
+        
            
          <Accordion title="Alle Aufgaben">
                <input type="checkbox" />
@@ -70,18 +77,22 @@ const hideModal = () =>{
                <label>Kleiderschrank aussortieren <button className="btnInfo" onClick={() =>showModal()}>i</button></label>
             
          </Accordion>
+
          <Modal showModal={openModal} hideModal={hideModal}>
-         <div className="Modal">
-            <p>Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.</p>
-        
-        <button className="modalBtn1" onClick={hideModal}>Löschen</button><br/>
-        <Link to="/home"><button className="modalBtn">Erledigt</button><br/></Link>
-        <Link to="/UpdateAufgabe"><button className="modalBtn3">Bearbeiten</button></Link>
+               <div className="Modal">
+                  <p>Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.</p>
+            
+            <button className="modalBtn1" onClick={hideModal}>Löschen</button><br/>
+            <Link to="/home"><button className="modalBtn2">Erledigt</button><br/></Link>
+            <Link to="/UpdateAufgabe"><button className="modalBtn3">Bearbeiten</button></Link>
         </div>
          </Modal>
+     
       </div>
    );
 };
+
+// Accordion
 const Accordion = ({ children, title, isExpand = false }) => {
    const [expand, setExpand] = useState(isExpand);
    return (

@@ -1,0 +1,17 @@
+.modalContainer{
+   display: flex;
+   align-items: center;
+   width: 90%;
+   margin-top: 3%;
+
+
+}
+
+.modalShow{
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+
+}

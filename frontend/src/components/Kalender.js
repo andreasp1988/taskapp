@@ -1,29 +1,39 @@
-import React, { Component } from 'react';
-import calendar from "react-calendar";
+import React, { useState } from 'react';
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css'
 import Nav from './Nav';
+import '../css/Kalendar.css'
 
-export default class Kalender extends Component {
 
-    state = {
-        date: new Date()
+
+const Kalender = () => {
+    const [date, setDate] = useState(new Date());
+
+    // const [work,setWork] = useState([
+    //   {
+    //     title:'Wäsche aufhängen', p:'Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.',
+    //      id:1
+    //  },
+    //   {
+    //     title:'Wäsche aufhängen', p:'Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.',
+    //     id:2,
+    // },
+    //   {
+    //     title:'Wäsche aufhängen', p:'Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.',
+    //      id:3
+    //   }
+    // ])
+  
+    const onChange = (newDate) => {
+      setDate(newDate);
     }
-
-    onChange = date => {
-        this.setState({
-            date
-        })
-    }
-
-
-
-    render() {
-        return (
-            <div>
-                <calendar />
-                onChange={this.onChange}
-                <div>
-                    <p>Alle aufgaben für heute.{this.state.date.toLocaleDateString()}</p>
-                    <form>
+  
+    return (
+              <div className="kalendar">
+                  <Calendar onChange={onChange}/>
+                    <div>
+                      <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
+                      
                         <input type="checkbox" />
                         <label>Wäsche aufhängen</label><br />
                         <input type="checkbox" />
@@ -31,10 +41,16 @@ export default class Kalender extends Component {
                         <input type="checkbox" />
                         <label>Javascript lernen</label>
 
-                    </form>
-                </div>
+                  
+
+
+
+                    </div>
+               
                 <Nav />
-            </div>
-        )
-    }
-}
+                  </div>
+              
+          )
+  }  
+
+  export default Kalender;
