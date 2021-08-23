@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+import axios from "axios"
 
 
 const AddAufgabe = () => {
@@ -23,42 +24,46 @@ const AddAufgabe = () => {
             return {
                 ...prev,
                 [event.target.name]: event.target.value
-
             }
         })
     }
 
     const handleDateInput = (date) => {
         setStartDate(date)
-        console.log(date)
-        console.log(date.toLocaleDateString())
+        // console.log(date)
+        // console.log(date.toLocaleDateString())
         setInputs({ ...inputs, datum: date.toLocaleDateString() })
 
     }
 
     const handleTimeStartInput = (value) => {
-        console.log(value._d)
-        console.log(value._d.getHours() + ":" + value._d.getMinutes())
-        console.log(value._d.getMinutes())
-        setInputs({ ...inputs, start: value._d })
+        // console.log(value._d)
+        // console.log(value._d.getHours() + ":" + value._d.getMinutes())
+        // console.log(value._d.getMinutes())
+        setInputs({ ...inputs, start: value._d.getHours() + ":" + value._d.getMinutes() })
     }
 
     const handleTimeEndeInput = (value) => {
-        console.log(value._d)
-        setInputs({ ...inputs, ende: value._d })
+        // console.log(value._d)
+        setInputs({ ...inputs, ende: value._d.getHours() + ":" + value._d.getMinutes() })
     }
 
     const handleCategoryInput = (e) => {
-        console.log(e)
-        console.log(e.target.value)
+        // console.log(e)
+        // console.log(e.target.value)
         setInputs({ ...inputs, kategorie: e.target.value })
+    }
+
+    const saveAufgabe = () => {
+        axios.post('/api', inputs)
+            .then(result => window.location.href = result.data.redirect)
+            .catch(err => console.log(err))
     }
 
     return (
         <>
             <div className="addAufgabe">
                 <h1>Aufgabe hinzufügen</h1>
-
                 <form action="">
                     <div className="flex">
                         <label htmlFor="name">Name</label>
@@ -70,7 +75,6 @@ const AddAufgabe = () => {
                         <DatePicker className="bg" selected={startDate} onChange={(date) => handleDateInput(date)} />
                         {/* <DatePicker className="bg" selected={startDate} onChange={(date) => setStartDate(date)} /> */}
                     </div>
-
                     <section className="startEnde">
                         <div className="flex">
                             <label htmlFor="start">Start</label>
@@ -104,15 +108,11 @@ const AddAufgabe = () => {
                             <input type="radio" name="kategorie" id="bearbeitung" value="In Bearbeitung" onClick={handleCategoryInput} />
                             <label htmlFor="bearbeitung">In Bearbeitung</label>
                             <div><img src="/img/plus.png" alt="" /></div>
-
                         </section>
-
                     </section>
-
-
                 </form>
             </div>
-            <ButtonAddUpd name="Erstellen" />
+            <ButtonAddUpd name="Erstellen" onClick={saveAufgabe} />
             <Nav />
         </>
 
