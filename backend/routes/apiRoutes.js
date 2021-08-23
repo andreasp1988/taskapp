@@ -1,19 +1,19 @@
 const express = require('express')
 const router = express.Router()
-// const User = require('../models/user')
+const User = require('../models/user')
 
-const Aufgabe = require('../models/aufgabe')
+// const Aufgabe = require('../models/aufgabe')
 
 
-router.get('/', (req, res) => {
-    Aufgabe.find()
-        .then(result => res.json(result))
-        .catch(err => console.log(err))
-})
+// router.get('/', (req, res) => {
+//     Aufgabe.find()
+//         .then(result => res.json(result))
+//         .catch(err => console.log(err))
+// })
 
-router.post('/', (req, res) => {
-    console.log(req.body)
-})
+// router.post('/', (req, res) => {
+//     console.log(req.body)
+// })
 
 
 
