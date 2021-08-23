@@ -11,10 +11,25 @@ text-align: left;
 
 
 
-.addAufgabe div{
+.addAufgabe .flex{
     display: flex;
     flex-direction: column;
-    padding-bottom: 3vh;
+    margin-bottom: 3vh;
+}
+
+.addAufgabe .flexRow{
+    display: flex;
+}
+
+.bg{
+    background-image: url("date.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 100%;
+}
+
+.react-datepicker-wrapper{
+    border-bottom: 1px solid #333333;
 }
 .addAufgabe label{
     padding-bottom: .5vh;
@@ -33,6 +48,10 @@ text-align: left;
     background-color: #F0F4FD;
     font-size: 1.25rem;
     font-family: Roboto;
+    border-radius: 0;
+    padding: 0;
+    color: #333333;
+    outline: none;
 }
 
 .startEnde div{
@@ -80,4 +99,12 @@ text-align: left;
 .category section:nth-of-type(2) button:nth-of-type(2){
     background-color:  #F0F4FD;
     padding: 0;
+}
+
+.rc-time-picker-clear-icon:after{
+    content: none !important;
+}
+
+.rc-time-picker-clear{
+    display: none;
 }
