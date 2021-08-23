@@ -26,13 +26,17 @@ const AddAufgabe = () => {
                     <div className="flex">
                         <label htmlFor="datum">Datum</label>
                         {/* <input type="text" name="" id="datum" placeholder="27.08.2021" /> */}
-                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                        <div className="flexRow">
+                            <DatePicker className="bg" selected={startDate} onChange={(date) => setStartDate(date)} />
+                            {/* <img src="/img/date.svg" alt="" /> */}
+                        </div>
+
                     </div>
 
                     <section className="startEnde">
                         <div className="flex">
                             <label htmlFor="start">Start</label>
-                            <TimePicker defaultValue={moment()} showSecond={false} minuteStep={15} />
+                            <TimePicker className="bgZeit" defaultValue={moment()} showSecond={false} minuteStep={15} />
                         </div>
                         <div className="flex">
                             <label htmlFor="ende">Ende</label>
