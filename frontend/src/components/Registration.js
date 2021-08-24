@@ -29,8 +29,8 @@ const Registration = () => {
             <LoginHeader />
             <form>
                 <input type="text" name="email" placeholder="Email" value={inputs.email} onChange={handleInputs} />
-                <input type="password" name="Passwort" placeholder="Passwort" value={inputs.password} onChange={handleInputs} />
-                <input type="password" name="Passwort" placeholder="Passwort" value={inputs.password} onChange={handleInputs} />
+                <input type="text" name="password" placeholder="Passwort" onChange={handleInputs} />
+                <input type="text" name="password_True" placeholder="Passwort" onChange={handleInputs} />
                 <button onClick={saveUser} >Jetzt Anmelden</button>
             </form>
         </div>

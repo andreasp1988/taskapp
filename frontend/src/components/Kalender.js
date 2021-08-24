@@ -1,56 +1,36 @@
 import React, { useState } from 'react';
-import Calendar from "react-calendar";
-import 'react-calendar/dist/Calendar.css'
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import Nav from './Nav';
-import '../css/Kalendar.css'
-
-
+import '../css/Kalendar.css';
+//import ToDoList from './ToDoList';
+//import data from './data.json';
 
 const Kalender = () => {
-    const [date, setDate] = useState(new Date());
+   const [date, setDate] = useState(new Date());
 
-    // const [work,setWork] = useState([
-    //   {
-    //     title:'Wäsche aufhängen', p:'Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.',
-    //      id:1
-    //  },
-    //   {
-    //     title:'Wäsche aufhängen', p:'Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.',
-    //     id:2,
-    // },
-    //   {
-    //     title:'Wäsche aufhängen', p:'Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.',
-    //      id:3
-    //   }
-    // ])
-  
-    const onChange = (newDate) => {
+   //const [toDoList, setToDoList] = useState(data);
+
+   const onChange = (newDate) => {
       setDate(newDate);
-    }
-  
-    return (
-              <div className="kalendar">
-                  <Calendar onChange={onChange}/>
-                    <div>
-                      <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
-                      
-                        <input type="checkbox" />
-                        <label>Wäsche aufhängen</label><br />
-                        <input type="checkbox" />
-                        <label>Einkaufen gehen</label><br />
-                        <input type="checkbox" />
-                        <label>Javascript lernen</label>
+      // setToDoList(data);
+   };
 
-                  
+   //const onClick = (data){}
 
+   return (
+      <div className="kalendar">
+         <h1>Kalender</h1>
+         <div className="kalendercontainer">
+            <Calendar onChange={onChange} />
+            <div className="contain">
+               <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
+            </div>
+         </div>
 
+         <Nav />
+      </div>
+   );
+};
 
-                    </div>
-               
-                <Nav />
-                  </div>
-              
-          )
-  }  
-
-  export default Kalender;
+export default Kalender;

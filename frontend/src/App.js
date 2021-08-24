@@ -19,7 +19,7 @@ function App() {
         <div>
           <Switch>
             <Route path="/" component={Login} exact />
-            <Route path="/registation" component={Registration} />
+            <Route path="/registration" component={Registration} />
             <Route path="/addAufgabe" component={AddAufgabe} />
             <Route path="/updateAufgabe" component={UpdateAufgabe} />
             <Route path="/home" component={Home} />

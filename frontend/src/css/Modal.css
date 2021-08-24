@@ -1,17 +1,81 @@
-.modalContainer{
+/*.modalContainer {
    display: flex;
    align-items: center;
+   justify-content: center;
+
    width: 90%;
    margin-top: 3%;
+} */
 
-
+.modalShow {
+   background: #ffffff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 76%;
+   height: 75%;
 }
 
-.modalShow{
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
+.Modal {
+   height: inherit;
+   border-radius: 5px;
+   box-shadow: 0px 5px 5px rgba(90, 85, 202, 0.5);
+}
 
+.hero,
+p {
+   display: flex;
+   flex-direction: row;
+   margin-left: 10%;
+}
+.circle {
+   display: flex;
+   width: 20px;
+   height: 20px;
+   background: rgba(90, 85, 202, 1);
+   border-radius: 50%;
+}
+.fertig {
+   display: flex;
+   padding-left: 15px;
+   width: 20px;
+   height: 20px;
+}
+.modalBtn1 {
+   display: flex;
+   align-items: center;
+   width: 80%;
+   height: 35px;
+   color: #333;
+   border: 2px solid rgba(90, 85, 202, 0.5);
+
+   border-radius: 5px;
+   margin-top: 10px;
+   background: rgba(90, 85, 202, 0.5);
+   margin-top: -15;
+   margin-left: 10%;
+}
+.modalBtn2 {
+   display: flex;
+   align-items: center;
+   width: 80%;
+   height: 35px;
+   color: #333;
+   background: #fff;
+   border: 2px solid rgba(90, 85, 202, 0.5);
+   border-radius: 5px;
+   margin-top: -10px;
+   margin-left: 10%;
+}
+.modalBtn3 {
+   display: flex;
+   align-items: center;
+   width: 80%;
+   height: 35px;
+   color: #333;
+   background: #fff;
+   border: 2px solid rgba(90, 85, 202, 0.5);
+   border-radius: 5px;
+   margin-top: -10px;
+   margin-left: 10%;
 }
