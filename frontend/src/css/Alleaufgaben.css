@@ -1,10 +1,10 @@
-.PieChart{
+.PieChart {
    display: flex;
    align-self: center;
    margin-bottom: 3%;
    margin-left: 3%;
 }
-.Alleaufgaben{
+.Alleaufgaben {
    width: 100%;
    display: flex;
    flex-direction: column;
@@ -21,14 +21,12 @@
    color: #333;
    border: 2px solid #ddd;
    border-radius: 5px;
-
 }
 .title-box {
    cursor: pointer;
    padding: 15px;
    background-color: #ffff;
    border-radius: 5px;
-
 }
 .title {
    width: calc(100% - 20px);
@@ -38,16 +36,15 @@
    padding: 15px;
    border-top: 1px solid #ddd;
    border-radius: 5px;
-
 }
-.btnInfo{
-   border-radius: 70%;
+.btnInfo {
+   display: inline-block;
+   text-align: center;
+   border-radius: 50%;
    color: #ffff;
-   height: 10px;
-   width: 10px;
+   height: 20px;
+   width: 20px;
    background: rgba(51, 51, 51, 0.5);
-
-
 }
 /*.Modal{
    display: flex;
@@ -58,34 +55,21 @@
    background: #fff;
 }*/
 
-.circle{
-   width: 20px;
-   height: 20px;
-   background: rgba(90, 85, 202, 1);
-
-}
-strong{
-   padding: 15px;
-}
-
-
-.modalBtn1{
-   display:flex;
+/*.modalBtn1 {
+   display: flex;
    align-items: center;
    width: 80%;
    height: 35px;
    color: #333;
    border: 2px solid rgba(90, 85, 202, 0.5);
-  
+
    border-radius: 5px;
    margin-top: 10px;
    background: rgba(90, 85, 202, 0.5);
-   margin-top: -13;
-
-
+   margin-top: -15;
 }
-.modalBtn2{
-   display:flex;
+.modalBtn2 {
+   display: flex;
    align-items: center;
    width: 80%;
    height: 35px;
@@ -94,10 +78,9 @@ strong{
    border: 2px solid rgba(90, 85, 202, 0.5);
    border-radius: 5px;
    margin-top: -10px;
-
 }
-.modalBtn3{
-   display:flex;
+.modalBtn3 {
+   display: flex;
    align-items: center;
    width: 80%;
    height: 35px;
@@ -106,9 +89,7 @@ strong{
    border: 2px solid rgba(90, 85, 202, 0.5);
    border-radius: 5px;
    margin-top: -10px;
-
-
-}
-a{
+}*/
+a {
    text-decoration: none;
 }
