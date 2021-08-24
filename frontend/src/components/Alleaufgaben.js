@@ -76,7 +76,7 @@ const Aufgaben = () => {
             <br />
             <input type="checkbox" />
             <label>
-               php mal angucken{' '}
+               Finn und Georg ärgern{' '}
                <button className="btnInfo" onClick={() => showModal()}>
                   i
                </button>
