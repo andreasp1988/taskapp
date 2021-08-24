@@ -1,93 +1,128 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import '../css/Alleaufgaben.css';
 import Modal from './Modal';
-import { Pie} from 'react-chartjs-2';
-import { Link } from "react-router-dom";
-
+import { Pie } from 'react-chartjs-2';
+import { Link } from 'react-router-dom';
 
 // chrtsjs in reactjs
 
 //defaults.global.tooltips.enabled = false;
 //defaults.global.labels.display = 'false';
-const data ={
+const data = {
    //labels: [ "Alleaufgaben",'Ausstehend', 'Fertig', 'In Bearbeitung'],
    datasets: [
       {
          label: '# of votes',
-         data: ["5","5", "5", "25"],
+         data: ['5', '5', '5', '25'],
          backgroundColor: [
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)',
-            'rgba(255,255,255,1)'
-
+            'rgba(255,255,255,1)',
          ],
-         borderWidth:1
+         borderWidth: 1,
       },
- 
    ],
-
-
-}
-
-
-
+};
 
 const Aufgaben = () => {
+   const [openModal, setOpenModal] = useState(false);
 
-   
-const [openModal,setOpenModal] = useState(false)
+   const showModal = () => {
+      setOpenModal(true);
+   };
+   const hideModal = () => {
+      setOpenModal(false);
+   };
 
-const showModal = () => {
-
-   setOpenModal(true)
-
-}
-const hideModal = () =>{
-   setOpenModal(false)
-}
-
- return (
-
-  
+   return (
       <div className="Alleaufgaben">
          <div className="PieChart">
-         <div style={{height:"200px",width:"200px"}}>
-            <Pie data={data} options={{
-               responsive:true,
-               title:{text:"# of votes"}
-            }}/>
+            <div style={{ height: '200px', width: '200px' }}>
+               <Pie
+                  data={data}
+                  options={{
+                     responsive: true,
+                     title: { text: '# of votes' },
+                  }}
+               />
             </div>
          </div>
 
-        
-           
          <Accordion title="Alle Aufgaben">
-               <input type="checkbox" />
-               <label>Wäsche aufhängen <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
-               <input type="checkbox" />
-               <label>Einkaufen gehen <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
-               <input type="checkbox" />
-               <label>Javascript lernen <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
-               <input type="checkbox" />
-               <label>php mal angucken <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
-               <input type="checkbox" />
-               <label>Katze füttern <button className="btnInfo" onClick={() =>showModal()}>i</button></label><br/>
-               <input type="checkbox" />
-               <label>Kleiderschrank aussortieren <button className="btnInfo" onClick={() =>showModal()}>i</button></label>
-            
+            <input type="checkbox" />
+            <label>
+               Wäsche aufhängen{' '}
+               <button className="btnInfo" onClick={() => showModal()}>
+                  i
+               </button>
+            </label>
+            <br />
+            <input type="checkbox" />
+            <label>
+               Einkaufen gehen{' '}
+               <button className="btnInfo" onClick={() => showModal()}>
+                  i
+               </button>
+            </label>
+            <br />
+            <input type="checkbox" />
+            <label>
+               Javascript lernen{' '}
+               <button className="btnInfo" onClick={() => showModal()}>
+                  i
+               </button>
+            </label>
+            <br />
+            <input type="checkbox" />
+            <label>
+               php mal angucken{' '}
+               <button className="btnInfo" onClick={() => showModal()}>
+                  i
+               </button>
+            </label>
+            <br />
+            <input type="checkbox" />
+            <label>
+               Katze füttern{' '}
+               <button className="btnInfo" onClick={() => showModal()}>
+                  i
+               </button>
+            </label>
+            <br />
+            <input type="checkbox" />
+            <label>
+               Kleiderschrank aussortieren{' '}
+               <button className="btnInfo" onClick={() => showModal()}>
+                  i
+               </button>
+            </label>
          </Accordion>
 
          <Modal showModal={openModal} hideModal={hideModal}>
-               <div className="Modal">
-                  <p>Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce.</p>
-            
-            <button className="modalBtn1" onClick={hideModal}>Löschen</button><br/>
-            <Link to="/home"><button className="modalBtn2">Erledigt</button><br/></Link>
-            <Link to="/UpdateAufgabe"><button className="modalBtn3">Bearbeiten</button></Link>
-        </div>
+            <div className="Modal">
+               <p>
+                  Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur
+                  adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim
+                  nunc, nulla mauris in facilisi id fusce.
+               </p>
+               <div className="hero">
+                  <div className="circle"></div>
+                  <div className="fertig">Fertig</div>
+               </div>
+               <button className="modalBtn1" onClick={hideModal}>
+                  Löschen
+               </button>
+               <br />
+               <Link to="/home">
+                  <button className="modalBtn2">Erledigt</button>
+                  <br />
+               </Link>
+               <Link to="/UpdateAufgabe">
+                  <button className="modalBtn3">Bearbeiten</button>
+               </Link>
+            </div>
          </Modal>
-     
       </div>
    );
 };
@@ -109,8 +144,5 @@ const Accordion = ({ children, title, isExpand = false }) => {
       </div>
    );
 };
-
-
-
 
 export default Aufgaben;

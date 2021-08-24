@@ -1,0 +1,22 @@
+[
+   {
+      "id": 1,
+      "title": "Wäsche aufhängen",
+      "details": "Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce."
+   },
+   {
+      "id": 2,
+      "title": "Einkaufen gehen",
+      "details": "Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce."
+   },
+   {
+      "id": 3,
+      "title": "Katze füttern",
+      "details": "Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce."
+   },
+   {
+      "id": 4,
+      "title": "Javascript lernen",
+      "details": "Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim nunc, nulla mauris in facilisi id fusce."
+   }
+]
