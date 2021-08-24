@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
     console.log(req.body)
     const user = new User(req.body)
     user.save()
-        .then(result => res.json(result))
+        .then(result => res.json({ redirect: "/users" }))
         .catch(err => console.log(err))
 })
 router.get('id', (req, res) => {
@@ -35,6 +35,8 @@ router.get('id', (req, res) => {
         .then(result => res.json(result))
         .catch(err => res.json({ message: "User not found" }))
 })
+
+
 
 module.exports = router
 

@@ -71,7 +71,11 @@ const Aufgaben = () => {
             <input type="checkbox" />
             <label>Javascript lernen <button className="btnInfo" onClick={() => showModal()}>i</button></label><br />
             <input type="checkbox" />
+<<<<<<< HEAD
             <label>php mal angucken <button className="btnInfo" onClick={() => showModal()}>i</button></label><br />
+=======
+            <label>Finn und Georg ärgern <button className="btnInfo" onClick={() => showModal()}>i</button></label><br />
+>>>>>>> c2b5f4d36001b116fa93728138afc22aff6077c7
             <input type="checkbox" />
             <label>Katze füttern <button className="btnInfo" onClick={() => showModal()}>i</button></label><br />
             <input type="checkbox" />
