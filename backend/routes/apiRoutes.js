@@ -11,7 +11,7 @@ const User = require('../models/user')
 //         .catch(err => console.log(err))
 // })
 
-// router.post('/', (req, res) => {
+// router.post('/aufgabe', (req, res) => {
 //     console.log(req.body)
 // })
 
