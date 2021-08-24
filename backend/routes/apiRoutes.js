@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
     console.log(req.body)
     const user = new User(req.body)
     user.save()
-        .then(result => res.json({ redirect: "/addAufgabe" }))
+        .then(result => res.json({ redirect: "/home" }))
         // .then(result => console.log("Das ist der Finn", result))
         .catch(err => console.log(err))
 })
