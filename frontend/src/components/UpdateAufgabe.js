@@ -4,7 +4,8 @@ import '../css/AddUpdAufgabe.css'
 
 const UpdateAufgabe = () => {
     return (
-        <div className="updateAufgabe">
+        <div className="addAufgabe">
+            <h1>Aufgabe bearbeiten</h1>
             <ButtonAddUpd name="Update" />
             <Nav />
         </div>
