@@ -31,7 +31,7 @@ const AddAufgabe = () => {
         setStartDate(date)
         // console.log(date)
         // console.log(date.toLocaleDateString())
-        setInputs({ ...inputs, datum: date.toLocaleDateString() })
+        setInputs({ ...inputs, datum: date.toLocaleDateString('de-DE') })
 
     }
 
