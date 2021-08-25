@@ -5,7 +5,7 @@ import Nav from './Nav';
 import '../css/Kalendar.css';
 import Kalendarmodale from './Kalendarmodal';
 import Modale from './Modale';
-//import { useParams } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import axios from 'axios';
 //import TimePicker from 'react-time-picker';
 //import ToDoList from './ToDoList';
@@ -44,22 +44,18 @@ const Kalender = () => {
       setDate(newDate);
    };
 
+   //const allowed = ['kategorie'];
+   // const filterd = Object.datum(data);
+
    return (
       <Fragment>
          <div className="kalendar">
             <h1>Kalender</h1>
             <div className="kalendercontainer">
                <Calendar onChange={onChange} />
-
                <div className="contain">
                   <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
                   <br />
-                  {/*data &&
-                     data.map((aufgabe) => (
-                        <div key={aufgabe._id}>
-                           <input type="checkbox" value={aufgabe.name} />
-                        </div>
-                     ))*/}
                </div>
             </div>
 
@@ -73,4 +69,15 @@ const Kalender = () => {
 /* <button className="btnInfo" onClick={toggle}>
 i
 </button> */
+
+//<Modale reveals={reveals} hidden={toggle} />
+
+// {data &&
+//    data.map((aufgabe) => (
+//       <div key={aufgabe._id}>
+//          <input type="checkbox" /*value={aufgabe.name}*/ />
+//          <label>{aufgabe.name}</label>
+//       </div>
+//    ))}
+// </div>
 export default Kalender;
