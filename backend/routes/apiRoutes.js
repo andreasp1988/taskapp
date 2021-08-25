@@ -5,11 +5,11 @@ const User = require('../models/user')
 const Aufgabe = require('../models/aufgabe')
 
 
-// router.get('/', (req, res) => {
-//     Aufgabe.find()
-//         .then(result => res.json(result))
-//         .catch(err => console.log(err))
-// })
+router.get('/aufgabe', (req, res) => {
+    Aufgabe.find()
+        .then(result => res.json(result))
+        .catch(err => console.log(err))
+})
 
 router.post('/aufgabe', (req, res) => {
     console.log(req.body)
