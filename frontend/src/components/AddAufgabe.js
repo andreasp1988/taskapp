@@ -1,4 +1,3 @@
-import ButtonAddUpd from "./ButtonAddUpd";
 import Nav from "./Nav";
 import '../css/AddUpdAufgabe.css'
 
@@ -92,13 +91,6 @@ const AddAufgabe = () => {
                     </div>
                     <section className="category">
                         <label>Kategorie</label>
-                        {/* <section>
-                            <button>Ausstehend</button>
-                            <button>Fertig</button>
-                        </section><section>
-                            <button>In Bearbeitung</button>
-                            <button><img src="/img/plus.png" alt="" /></button>
-                        </section> */}
                         <section>
                             <input type="radio" name="kategorie" id="ausstehend" value="Ausstehend" onClick={handleCategoryInput} />
                             <label htmlFor="ausstehend">Ausstehend</label>
@@ -112,8 +104,8 @@ const AddAufgabe = () => {
                         </section>
                     </section>
                 </form>
+                <button onClick={saveAufgabe}>Erstellen </button>
             </div>
-            <button onClick={saveAufgabe}>Erstellen </button>
             <Nav />
         </>
 
