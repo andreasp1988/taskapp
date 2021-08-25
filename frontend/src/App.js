@@ -11,6 +11,7 @@ import AddAufgabe from './components/AddAufgabe';
 import UpdateAufgabe from './components/UpdateAufgabe';
 import Home from './components/Home'
 import Kalender from './components/Kalender';
+import Aufgaben from './components/Aufgaben';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/updateAufgabe" component={UpdateAufgabe} />
             <Route path="/home" component={Home} />
             <Route path="/kalender" component={Kalender} />
+            <Route path="/aufgaben" component={Aufgaben} />
           </Switch>
         </div>
       </Router>
