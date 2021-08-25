@@ -5,7 +5,7 @@ import Nav from './Nav';
 import '../css/Kalendar.css';
 import Kalendarmodale from './Kalendarmodal';
 import Modale from './Modale';
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import axios from 'axios';
 //import TimePicker from 'react-time-picker';
 //import ToDoList from './ToDoList';
@@ -13,27 +13,27 @@ import axios from 'axios';
 
 const Kalender = () => {
    const [date, setDate] = useState(new Date());
-   // const [value, onChange] = useState('10:00');
+   const [data, setData] = useState(null);
 
-   let { id } = useParams();
+   //let { id } = useParams();
    //const [task,setTask] = useState(null)
-   const [inputs, setInputs] = useState({});
+   //const [inputs, setInputs] = useState({});
 
-   const handleInputs = (event) => {
-      setInputs((prev) => {
-         return {
-            ...prev,
-            [event.target.name]: event.target.value,
-         };
-      });
-   };
+   // const handleInputs = (event) => {
+   //    setInputs((prev) => {
+   //       return {
+   //          ...prev,
+   //          [event.target.name]: event.target.value,
+   //       };
+   //    });
+   // };
 
    useEffect(() => {
       axios
-         .get(`api/aufgabe/${id}`)
+         .get('/api/aufgabe')
          .then((result) => {
-            //setTask(result.data)
-            setInputs(result.data);
+            // console.log(result);
+            setData(result.data);
          })
          .catch((err) => console.log(err));
    });
@@ -53,36 +53,13 @@ const Kalender = () => {
 
                <div className="contain">
                   <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
-                  <input
-                     type="checkbox"
-                     name="name"
-                     value={inputs.name}
-                     onChange={handleInputs}
-                  />
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>
                   <br />
-                  <input
-                     type="checkbox"
-                     name="name"
-                     value={inputs.name}
-                     onChange={handleInputs}
-                  />
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>{' '}
-                  <br />
-                  <input
-                     type="checkbox"
-                     name="name"
-                     value={inputs.name}
-                     onChange={handleInputs}
-                  />
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>
-                  <br />
+                  {/*data &&
+                     data.map((aufgabe) => (
+                        <div key={aufgabe._id}>
+                           <input type="checkbox" value={aufgabe.name} />
+                        </div>
+                     ))*/}
                </div>
             </div>
 
@@ -93,5 +70,7 @@ const Kalender = () => {
       </Fragment>
    );
 };
-
+/* <button className="btnInfo" onClick={toggle}>
+i
+</button> */
 export default Kalender;
