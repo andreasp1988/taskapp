@@ -39,12 +39,18 @@ const AddAufgabe = () => {
         // console.log(value._d)
         // console.log(value._d.getHours() + ":" + value._d.getMinutes())
         // console.log(value._d.getMinutes())
-        setInputs({ ...inputs, start: value._d.getHours() + ":" + value._d.getMinutes() })
+        const hour = value._d.getHours() < 10 ? "0" + value._d.getHours() : value._d.getHours()
+        const minuten = value._d.getMinutes() < 10 ? "0" + value._d.getMinutes() : value._d.getMinutes()
+        setInputs({ ...inputs, start: hour + ":" + minuten })
+        // setInputs({ ...inputs, start: value._d.getHours() + ":" + value._d.getMinutes() })
     }
 
     const handleTimeEndeInput = (value) => {
         // console.log(value._d)
-        setInputs({ ...inputs, ende: value._d.getHours() + ":" + value._d.getMinutes() })
+        const hour = value._d.getHours() < 10 ? "0" + value._d.getHours() : value._d.getHours()
+        const minuten = value._d.getMinutes() < 10 ? "0" + value._d.getMinutes() : value._d.getMinutes()
+        setInputs({ ...inputs, ende: hour + ":" + minuten })
+        // setInputs({ ...inputs, ende: value._d.getHours() + ":" + value._d.getMinutes() })
     }
 
     const handleCategoryInput = (e) => {
