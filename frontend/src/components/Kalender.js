@@ -29,6 +29,7 @@ const Kalender = () => {
    };
 
    const [data, setData] = useState(null);
+
    useEffect(() => {
       axios
          .get('/api/aufgabe')
@@ -57,23 +58,21 @@ const Kalender = () => {
             ).map(ele =>
                JSON.stringify(ele.name))
             )} */}
-<<<<<<< HEAD
+
             {data &&
                data
                   .filter(
-                     (aufgabe) => aufgabe.datum === date.toLocaleDateString(),
+                     (aufgabe) =>
+                        aufgabe.datum === date.toLocaleDateString('ru-RU'),
                   )
-                  .map((ele) => <div key={ele._id}>{ele.name}</div>)}
-=======
-
-            {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString('ru-RU')
-            ).map(ele => <div key={ele._id}>
-               {ele.name}
-            </div>
-            )
-            )}
-
->>>>>>> c6d43141a6c6d2ce4a7dcfff2102cb43ee7d81c8
+                  .map((ele) => (
+                     <div key={ele._id}>
+                        <input type="checkbox" /> {ele.name}{' '}
+                        <button className="btnInfo" onClick={toggle}>
+                           i
+                        </button>
+                     </div>
+                  ))}
 
             <Modale reveals={reveals} hidden={toggle} />
 
@@ -84,9 +83,6 @@ const Kalender = () => {
 };
 
 export default Kalender;
-/* <button className="btnInfo" onClick={toggle}>
-i
-</button> */
 
 //<Modale reveals={reveals} hidden={toggle} />
 
