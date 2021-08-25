@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Modale.css';
+// import TimePicker from 'react-time-picker';
+// import Calendar from 'react-calendar';
 
 const Modale = ({ reveals, hidden }) =>
    reveals ? (
@@ -8,6 +10,8 @@ const Modale = ({ reveals, hidden }) =>
          <div className="overlay" />
          <div className="wrapper">
             <div className="modal">
+               {/* <p>Alle aufgaben für heute.{date.toLocaleDateString()} | </p><br/> */}
+
                <p>
                   Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur
                   adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim
@@ -24,7 +28,9 @@ const Modale = ({ reveals, hidden }) =>
                </button>
                <br />
                <Link to="/home">
-                  <button className="modalBtn2">Erledigt</button>
+                  <button className="modalBtn2" onClick={hidden}>
+                     Erledigt
+                  </button>
                   <br />
                </Link>
                <Link to="/UpdateAufgabe">
