@@ -22,10 +22,11 @@ function App() {
             <Route path="/" component={Login} exact />
             <Route path="/registration" component={Registration} />
             <Route path="/addAufgabe" component={AddAufgabe} />
-            <Route path="/updateAufgabe" component={UpdateAufgabe} />
+            {/* <Route path="/updateAufgabe" component={UpdateAufgabe} /> */}
             <Route path="/home" component={Home} />
             <Route path="/kalender" component={Kalender} />
-            <Route path="/aufgaben" component={Aufgaben} />
+            <Route path="/aufgaben" component={Aufgaben} exact />
+            <Route path="/aufgaben/:id" component={UpdateAufgabe} />
           </Switch>
         </div>
       </Router>

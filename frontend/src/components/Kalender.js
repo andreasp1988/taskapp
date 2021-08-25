@@ -1,51 +1,42 @@
-import React, { useState, Fragment, useEffect } from 'react';
+import React, { useState, Fragment } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Nav from './Nav';
 import '../css/Kalendar.css';
 import Kalendarmodale from './Kalendarmodal';
 import Modale from './Modale';
-//import { Link } from 'react-router-dom';
+
+import { useEffect } from 'react';
 import axios from 'axios';
-//import TimePicker from 'react-time-picker';
+//import {
+// Link
+//} from "react-router-dom";
+
 //import ToDoList from './ToDoList';
-//<TimePicker onChange={onChange} value={date}
+//import data from './data.json';
 
 const Kalender = () => {
    const [date, setDate] = useState(new Date());
+
+   //const [toDoList, setToDoList] = useState(data);
+   //modal
+
+   const { reveals, toggle } = Kalendarmodale();
+
+   const onChange = (newDate) => {
+      setDate(newDate);
+      // setToDoList(data);
+   };
+
    const [data, setData] = useState(null);
-
-   //let { id } = useParams();
-   //const [task,setTask] = useState(null)
-   //const [inputs, setInputs] = useState({});
-
-   // const handleInputs = (event) => {
-   //    setInputs((prev) => {
-   //       return {
-   //          ...prev,
-   //          [event.target.name]: event.target.value,
-   //       };
-   //    });
-   // };
-
    useEffect(() => {
       axios
          .get('/api/aufgabe')
-         .then((result) => {
-            // console.log(result);
-            setData(result.data);
-         })
+         .then((result) => setData(result.data))
          .catch((err) => console.log(err));
-   });
+   }, []);
 
-   //modal
-   const { reveals, toggle } = Kalendarmodale();
-   const onChange = (newDate) => {
-      setDate(newDate);
-   };
-
-   //const allowed = ['kategorie'];
-   // const filterd = Object.datum(data);
+   //const onClick = (data){}
 
    return (
       <Fragment>
@@ -55,9 +46,23 @@ const Kalender = () => {
                <Calendar onChange={onChange} />
                <div className="contain">
                   <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
-                  <br />
                </div>
             </div>
+            {/* {data && (data.map(aufgabe => <div key={aufgabe._id}>
+               <Link to={`/aufgaben/${aufgabe._id}`}>
+                  {aufgabe.name}
+               </Link>
+            </div>))} */}
+            {/* {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString()
+            ).map(ele =>
+               JSON.stringify(ele.name))
+            )} */}
+            {data &&
+               data
+                  .filter(
+                     (aufgabe) => aufgabe.datum === date.toLocaleDateString(),
+                  )
+                  .map((ele) => <div key={ele._id}>{ele.name}</div>)}
 
             <Modale reveals={reveals} hidden={toggle} />
 
@@ -66,6 +71,8 @@ const Kalender = () => {
       </Fragment>
    );
 };
+
+export default Kalender;
 /* <button className="btnInfo" onClick={toggle}>
 i
 </button> */
@@ -80,4 +87,3 @@ i
 //       </div>
 //    ))}
 // </div>
-export default Kalender;
