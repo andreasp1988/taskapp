@@ -4,41 +4,67 @@ import '../css/Modale.css';
 // import TimePicker from 'react-time-picker';
 // import Calendar from 'react-calendar';
 
-const Modale = ({ reveals, hidden }) =>
-   reveals ? (
-      <Fragment>
-         <div className="overlay" />
-         <div className="wrapper">
-            <div className="modal">
-               {/* <p>Alle aufgaben für heute.{date.toLocaleDateString()} | </p><br/> */}
+import { useEffect, useState } from "react";
+import axios from 'axios'
 
-               <p>
-                  Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur
-                  adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim
-                  nunc, nulla mauris in facilisi id fusce.
-               </p>
-               <br />
-               <div className="hero">
-                  <div className="circle"></div>
-                  <div className="fertig">Fertig</div>
-               </div>
+const Modale = ({ reveals, hidden, currentId }) => {
+   const [aufgabe, setAufgabe] = useState(null)
 
-               <button className="modalBtn1" onClick={hidden}>
-                  Löschen
-               </button>
-               <br />
-               <Link to="/home">
-                  <button className="modalBtn2" onClick={hidden}>
-                     Erledigt
+   useEffect(() => {
+      axios.get(`/api/aufgabe/${currentId}`)
+         .then(result => setAufgabe(result.data))
+         .catch((err) => console.log(err))
+   })
+
+   return (
+      reveals ? (
+         <Fragment>
+            <div className="overlay" />
+            <div className="wrapper">
+               <div className="modal">
+                  {/* <p>Alle aufgaben für heute.{date.toLocaleDateString()} | </p><br/> */}
+                  {aufgabe && (
+                     <div>
+                        <h3>{aufgabe.name}</h3>
+                        <p>{aufgabe.datum}</p>
+                        <p>{aufgabe.start}</p>
+                        <p>{aufgabe.beschreibung}</p>
+                        <p>{aufgabe.kategorie}</p>
+                     </div>
+
+                  )
+
+                  }
+                  {/* <p>
+                     {currentId}
+                     Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur
+                     adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim
+                     nunc, nulla mauris in facilisi id fusce.
+                  </p>
+                  <br /> */}
+                  {/* <div className="hero">
+                     <div className="circle"></div>
+                     <div className="fertig">Fertig</div>
+                  </div> */}
+
+                  <button className="modalBtn1" onClick={hidden}>
+                     Löschen
                   </button>
                   <br />
-               </Link>
-               <Link to="/UpdateAufgabe">
-                  <button className="modalBtn3">Bearbeiten</button>
-               </Link>
+                  <Link to="/home">
+                     <button className="modalBtn2" onClick={hidden}>
+                        Erledigt
+                     </button>
+                     <br />
+                  </Link>
+                  <Link to={`/aufgaben/${currentId}`}>
+                     <button className="modalBtn3">Bearbeiten</button>
+                  </Link>
+               </div>
             </div>
-         </div>
-      </Fragment>
-   ) : null;
+         </Fragment>
+      ) : null
+   )
+}
 
 export default Modale;
