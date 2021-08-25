@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../css/Alleaufgaben.css';
-import Modal from './Modal';
+import Kalendarmodale from './Kalendarmodal';
 import { Pie } from 'react-chartjs-2';
-import { Link } from 'react-router-dom';
+import Modale from './Modale';
 
 // chrtsjs in reactjs
 
@@ -26,14 +26,7 @@ const data = {
 };
 
 const Aufgaben = () => {
-   const [openModal, setOpenModal] = useState(false);
-
-   const showModal = () => {
-      setOpenModal(true);
-   };
-   const hideModal = () => {
-      setOpenModal(false);
-   };
+   const { reveals, toggle } = Kalendarmodale();
 
    return (
       <div className="Alleaufgaben">
@@ -53,7 +46,7 @@ const Aufgaben = () => {
             <input type="checkbox" />
             <label>
                Wäsche aufhängen{' '}
-               <button className="btnInfo" onClick={() => showModal()}>
+               <button className="btnInfo" onClick={toggle}>
                   i
                </button>
             </label>
@@ -61,7 +54,7 @@ const Aufgaben = () => {
             <input type="checkbox" />
             <label>
                Einkaufen gehen{' '}
-               <button className="btnInfo" onClick={() => showModal()}>
+               <button className="btnInfo" onClick={toggle}>
                   i
                </button>
             </label>
@@ -69,7 +62,7 @@ const Aufgaben = () => {
             <input type="checkbox" />
             <label>
                Javascript lernen{' '}
-               <button className="btnInfo" onClick={() => showModal()}>
+               <button className="btnInfo" onClick={toggle}>
                   i
                </button>
             </label>
@@ -77,7 +70,7 @@ const Aufgaben = () => {
             <input type="checkbox" />
             <label>
                Finn und Georg ärgern{' '}
-               <button className="btnInfo" onClick={() => showModal()}>
+               <button className="btnInfo" onClick={toggle}>
                   i
                </button>
             </label>
@@ -85,7 +78,7 @@ const Aufgaben = () => {
             <input type="checkbox" />
             <label>
                Katze füttern{' '}
-               <button className="btnInfo" onClick={() => showModal()}>
+               <button className="btnInfo" onClick={toggle}>
                   i
                </button>
             </label>
@@ -93,36 +86,13 @@ const Aufgaben = () => {
             <input type="checkbox" />
             <label>
                Kleiderschrank aussortieren{' '}
-               <button className="btnInfo" onClick={() => showModal()}>
+               <button className="btnInfo" onClick={toggle}>
                   i
                </button>
             </label>
          </Accordion>
 
-         <Modal showModal={openModal} hideModal={hideModal}>
-            <div className="Modal">
-               <p>
-                  Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur
-                  adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim
-                  nunc, nulla mauris in facilisi id fusce.
-               </p>
-               <div className="hero">
-                  <div className="circle"></div>
-                  <div className="fertig">Fertig</div>
-               </div>
-               <button className="modalBtn1" onClick={hideModal}>
-                  Löschen
-               </button>
-               <br />
-               <Link to="/home">
-                  <button className="modalBtn2">Erledigt</button>
-                  <br />
-               </Link>
-               <Link to="/UpdateAufgabe">
-                  <button className="modalBtn3">Bearbeiten</button>
-               </Link>
-            </div>
-         </Modal>
+         <Modale reveals={reveals} hidden={toggle} />
       </div>
    );
 };
