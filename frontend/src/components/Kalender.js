@@ -65,10 +65,6 @@ const Kalender = () => {
             ).map(ele =>
                JSON.stringify(ele.name))
             )} */}
-<<<<<<< HEAD
-
-=======
->>>>>>> 343f2a64142c56c531d43c23b651b59ebdc0b88e
 
             {data &&
                data

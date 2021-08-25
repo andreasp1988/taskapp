@@ -42,12 +42,7 @@ const Aufgaben = () => {
          <div className="PieChart">
             <div style={{ height: '200px', width: '200px' }}>
                <Pie
-<<<<<<< HEAD
-
-                  data={data}
-=======
                   data={data1}
->>>>>>> 343f2a64142c56c531d43c23b651b59ebdc0b88e
                   options={{
                      responsive: true,
                      title: { text: '# of votes' },
