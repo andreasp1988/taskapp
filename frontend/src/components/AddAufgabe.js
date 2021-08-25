@@ -55,8 +55,9 @@ const AddAufgabe = () => {
     }
 
     const saveAufgabe = () => {
-        axios.post('/api', inputs)
+        axios.post('/api/aufgabe', inputs)
             .then(result => window.location.href = result.data.redirect)
+            // .then(result => console.log(result))
             .catch(err => console.log(err))
     }
 
@@ -112,7 +113,7 @@ const AddAufgabe = () => {
                     </section>
                 </form>
             </div>
-            <ButtonAddUpd name="Erstellen" onClick={saveAufgabe} />
+            <button onClick={saveAufgabe}>Erstellen </button>
             <Nav />
         </>
 

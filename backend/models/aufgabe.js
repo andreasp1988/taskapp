@@ -7,7 +7,7 @@ const aufgabeSchema = new Schema({
         required: true
     },
     datum: {
-        type: Date,
+        type: String,
         required: true
     },
     start: {
