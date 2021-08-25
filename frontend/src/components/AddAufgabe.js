@@ -1,4 +1,3 @@
-import ButtonAddUpd from "./ButtonAddUpd";
 import Nav from "./Nav";
 import '../css/AddUpdAufgabe.css'
 
@@ -40,12 +39,18 @@ const AddAufgabe = () => {
         // console.log(value._d)
         // console.log(value._d.getHours() + ":" + value._d.getMinutes())
         // console.log(value._d.getMinutes())
-        setInputs({ ...inputs, start: value._d.getHours() + ":" + value._d.getMinutes() })
+        const hour = value._d.getHours() < 10 ? "0" + value._d.getHours() : value._d.getHours()
+        const minuten = value._d.getMinutes() < 10 ? "0" + value._d.getMinutes() : value._d.getMinutes()
+        setInputs({ ...inputs, start: hour + ":" + minuten })
+        // setInputs({ ...inputs, start: value._d.getHours() + ":" + value._d.getMinutes() })
     }
 
     const handleTimeEndeInput = (value) => {
         // console.log(value._d)
-        setInputs({ ...inputs, ende: value._d.getHours() + ":" + value._d.getMinutes() })
+        const hour = value._d.getHours() < 10 ? "0" + value._d.getHours() : value._d.getHours()
+        const minuten = value._d.getMinutes() < 10 ? "0" + value._d.getMinutes() : value._d.getMinutes()
+        setInputs({ ...inputs, ende: hour + ":" + minuten })
+        // setInputs({ ...inputs, ende: value._d.getHours() + ":" + value._d.getMinutes() })
     }
 
     const handleCategoryInput = (e) => {
@@ -55,8 +60,9 @@ const AddAufgabe = () => {
     }
 
     const saveAufgabe = () => {
-        axios.post('/api', inputs)
+        axios.post('/api/aufgabe', inputs)
             .then(result => window.location.href = result.data.redirect)
+            // .then(result => console.log(result))
             .catch(err => console.log(err))
     }
 
@@ -91,13 +97,6 @@ const AddAufgabe = () => {
                     </div>
                     <section className="category">
                         <label>Kategorie</label>
-                        {/* <section>
-                            <button>Ausstehend</button>
-                            <button>Fertig</button>
-                        </section><section>
-                            <button>In Bearbeitung</button>
-                            <button><img src="/img/plus.png" alt="" /></button>
-                        </section> */}
                         <section>
                             <input type="radio" name="kategorie" id="ausstehend" value="Ausstehend" onClick={handleCategoryInput} />
                             <label htmlFor="ausstehend">Ausstehend</label>
@@ -111,8 +110,8 @@ const AddAufgabe = () => {
                         </section>
                     </section>
                 </form>
+                <button onClick={saveAufgabe}>Erstellen </button>
             </div>
-            <ButtonAddUpd name="Erstellen" onClick={saveAufgabe} />
             <Nav />
         </>
 
