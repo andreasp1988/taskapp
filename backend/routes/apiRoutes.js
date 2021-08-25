@@ -11,6 +11,12 @@ router.get('/aufgabe', (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.get('/aufgabe/:id', (req, res) => {
+    Aufgabe.findById(req.params.id)
+        .then(result => res.json(result))
+        .catch(err => res.json({ message: "Not Found" }))
+})
+
 router.post('/aufgabe', (req, res) => {
     console.log(req.body)
     const contact = new Aufgabe(req.body)
