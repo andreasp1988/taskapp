@@ -33,6 +33,7 @@ const Aufgaben = () => {
          <div className="PieChart">
             <div style={{ height: '200px', width: '200px' }}>
                <Pie
+                  redraw={true}
                   data={data}
                   options={{
                      responsive: true,
