@@ -6,11 +6,11 @@ import '../css/Kalendar.css';
 import Kalendarmodale from './Kalendarmodal';
 import Modale from './Modale';
 
-import { useEffect } from "react";
-import axios from 'axios'
-import {
-   Link
-} from "react-router-dom";
+import { useEffect } from 'react';
+import axios from 'axios';
+//import {
+// Link
+//} from "react-router-dom";
 
 //import ToDoList from './ToDoList';
 //import data from './data.json';
@@ -28,12 +28,14 @@ const Kalender = () => {
       // setToDoList(data);
    };
 
-   const [data, setData] = useState(null)
+   const [data, setData] = useState(null);
+
    useEffect(() => {
-      axios.get('/api/aufgabe')
-         .then(result => setData(result.data))
-         .catch(err => console.log(err))
-   }, [])
+      axios
+         .get('/api/aufgabe')
+         .then((result) => setData(result.data))
+         .catch((err) => console.log(err));
+   }, []);
 
    //const onClick = (data){}
 
@@ -63,8 +65,25 @@ const Kalender = () => {
             ).map(ele =>
                JSON.stringify(ele.name))
             )} */}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 343f2a64142c56c531d43c23b651b59ebdc0b88e
 
+            {data &&
+               data
+                  .filter(
+                     (aufgabe) =>
+                        aufgabe.datum === date.toLocaleDateString('ru-RU'),
+                  )
+                  .map((ele) => (
+                     <div key={ele._id}>
+                        <input type="checkbox" /> {ele.name}{' '}
+                        <button className="btnInfo" onClick={toggle}>
+                           i
+                        </button>
+                     </div>
+                  ))}
 
             <Modale reveals={reveals} hidden={toggle} />
 
@@ -75,3 +94,14 @@ const Kalender = () => {
 };
 
 export default Kalender;
+
+//<Modale reveals={reveals} hidden={toggle} />
+
+// {data &&
+//    data.map((aufgabe) => (
+//       <div key={aufgabe._id}>
+//          <input type="checkbox" /*value={aufgabe.name}*/ />
+//          <label>{aufgabe.name}</label>
+//       </div>
+//    ))}
+// </div>
