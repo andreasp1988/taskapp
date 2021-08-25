@@ -57,12 +57,23 @@ const Kalender = () => {
             ).map(ele =>
                JSON.stringify(ele.name))
             )} */}
+<<<<<<< HEAD
             {data &&
                data
                   .filter(
                      (aufgabe) => aufgabe.datum === date.toLocaleDateString(),
                   )
                   .map((ele) => <div key={ele._id}>{ele.name}</div>)}
+=======
+
+            {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString('ru-RU')
+            ).map(ele => <div key={ele._id}>
+               {ele.name}
+            </div>
+            )
+            )}
+
+>>>>>>> c6d43141a6c6d2ce4a7dcfff2102cb43ee7d81c8
 
             <Modale reveals={reveals} hidden={toggle} />
 
