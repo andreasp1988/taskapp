@@ -29,6 +29,12 @@ const Kalender = () => {
    };
 
    const [data, setData] = useState(null);
+   const [idCheck, setIdCheck] = useState(null)
+
+   const toggleAufgabe = (event) => {
+      setIdCheck(event.target.id)
+      toggle()
+   }
 
    useEffect(() => {
       axios
@@ -75,13 +81,13 @@ const Kalender = () => {
                   .map((ele) => (
                      <div key={ele._id}>
                         <input type="checkbox" /> {ele.name}{' '}
-                        <button className="btnInfo" onClick={toggle}>
+                        <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
                            i
                         </button>
                      </div>
                   ))}
 
-            <Modale reveals={reveals} hidden={toggle} />
+            <Modale reveals={reveals} hidden={toggle} currentId={idCheck} />
 
             <Nav />
          </div>
