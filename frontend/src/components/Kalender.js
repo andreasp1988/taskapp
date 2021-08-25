@@ -6,6 +6,12 @@ import '../css/Kalendar.css';
 import Kalendarmodale from './Kalendarmodal';
 import Modale from './Modale';
 
+import { useEffect } from "react";
+import axios from 'axios'
+import {
+   Link
+} from "react-router-dom";
+
 //import ToDoList from './ToDoList';
 //import data from './data.json';
 
@@ -13,7 +19,6 @@ const Kalender = () => {
    const [date, setDate] = useState(new Date());
 
    //const [toDoList, setToDoList] = useState(data);
-
    //modal
 
    const { reveals, toggle } = Kalendarmodale();
@@ -22,6 +27,13 @@ const Kalender = () => {
       setDate(newDate);
       // setToDoList(data);
    };
+
+   const [data, setData] = useState(null)
+   useEffect(() => {
+      axios.get('/api/aufgabe')
+         .then(result => setData(result.data))
+         .catch(err => console.log(err))
+   }, [])
 
    //const onClick = (data){}
 
@@ -35,56 +47,23 @@ const Kalender = () => {
                   <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
                </div>
             </div>
-
-            <div>
-               <input type="checkbox" />
-               <label>
-                  Wäsche aufhängen{' '}
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>
-               </label>
-               <br />
-               <input type="checkbox" />
-               <label>
-                  Einkaufen gehen{' '}
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>
-               </label>
-               <br />
-               <input type="checkbox" />
-               <label>
-                  Javascript lernen{' '}
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>
-               </label>
-               <br />
-               <input type="checkbox" />
-               <label>
-                  Finn und Georg ärgern{' '}
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>
-               </label>
-               <br />
-               <input type="checkbox" />
-               <label>
-                  Katze füttern{' '}
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>
-               </label>
-               <br />
-               <input type="checkbox" />
-               <label>
-                  Kleiderschrank aussortieren{' '}
-                  <button className="btnInfo" onClick={toggle}>
-                     i
-                  </button>
-               </label>
+            {/* {data && (data.map(aufgabe => <div key={aufgabe._id}>
+               <Link to={`/aufgaben/${aufgabe._id}`}>
+                  {aufgabe.name}
+               </Link>
+            </div>))} */}
+            {/* {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString()
+            ).map(ele =>
+               JSON.stringify(ele.name))
+            )} */}
+            {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString()
+            ).map(ele => <div key={ele._id}>
+               {ele.name}
             </div>
+            )
+            )}
+
+
             <Modale reveals={reveals} hidden={toggle} />
 
             <Nav />
