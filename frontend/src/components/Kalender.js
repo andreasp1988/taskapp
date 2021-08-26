@@ -107,7 +107,6 @@ const Kalender = () => {
 };
 
 export default Kalender;
-<<<<<<< HEAD
 
 //<Modale reveals={reveals} hidden={toggle} />
 
@@ -120,5 +119,3 @@ export default Kalender;
 //    ))}
 // </div>
 
-=======
->>>>>>> d8d47044d3f7bf0ce700311a942b524f4619fcdf

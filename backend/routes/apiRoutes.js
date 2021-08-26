@@ -21,7 +21,7 @@ router.post('/aufgabe', (req, res) => {
     console.log(req.body)
     const contact = new Aufgabe(req.body)
     contact.save()
-        .then(result => res.json({ redirect: "/addAufgabe" }))
+        .then(result => res.json({ redirect: "/home" }))
         .catch(err => console.log(err))
 })
 
