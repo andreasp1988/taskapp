@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/Alleaufgaben.css';
 import Kalendarmodale from './Kalendarmodal';
 import { Pie } from 'react-chartjs-2';
 import Modale from './Modale';
+import axios from 'axios';
 
 // chrtsjs in reactjs
 
 //defaults.global.tooltips.enabled = false;
 //defaults.global.labels.display = 'false';
-const data = {
+const data1 = {
    //labels: [ "Alleaufgaben",'Ausstehend', 'Fertig', 'In Bearbeitung'],
    datasets: [
       {
@@ -28,13 +29,28 @@ const data = {
 const Aufgaben = () => {
    const { reveals, toggle } = Kalendarmodale();
 
+   const [data, setData] = useState(null);
+   const [idCheck, setIdCheck] = useState(null)
+
+   const toggleAufgabe = (event) => {
+      setIdCheck(event.target.id)
+      toggle()
+      // console.log(event)
+      // console.log(event.target.id)
+   }
+   useEffect(() => {
+      axios
+         .get('/api/aufgabe')
+         .then((result) => setData(result.data))
+         .catch((err) => console.log(err));
+   }, []);
+
    return (
       <div className="Alleaufgaben">
          <div className="PieChart">
             <div style={{ height: '200px', width: '200px' }}>
                <Pie
-
-                  data={data}
+                  data={data1}
                   options={{
                      responsive: true,
                      title: { text: '# of votes' },
@@ -44,56 +60,18 @@ const Aufgaben = () => {
          </div>
 
          <Accordion title="Alle Aufgaben">
-            <input type="checkbox" />
-            <label>
-               Wäsche aufhängen{' '}
-               <button className="btnInfo" onClick={toggle}>
-                  i
-               </button>
-            </label>
-            <br />
-            <input type="checkbox" />
-            <label>
-               Einkaufen gehen{' '}
-               <button className="btnInfo" onClick={toggle}>
-                  i
-               </button>
-            </label>
-            <br />
-            <input type="checkbox" />
-            <label>
-               Javascript lernen{' '}
-               <button className="btnInfo" onClick={toggle}>
-                  i
-               </button>
-            </label>
-            <br />
-            <input type="checkbox" />
-            <label>
-               Finn und Georg ärgern{' '}
-               <button className="btnInfo" onClick={toggle}>
-                  i
-               </button>
-            </label>
-            <br />
-            <input type="checkbox" />
-            <label>
-               Katze füttern{' '}
-               <button className="btnInfo" onClick={toggle}>
-                  i
-               </button>
-            </label>
-            <br />
-            <input type="checkbox" />
-            <label>
-               Kleiderschrank aussortieren{' '}
-               <button className="btnInfo" onClick={toggle}>
-                  i
-               </button>
-            </label>
+            {data &&
+               data.map((ele) => (
+                  <div key={ele._id}>
+                     <input type="checkbox" /> {ele.name}{' '}
+                     <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
+                        i
+                     </button>
+                  </div>
+               ))}
          </Accordion>
 
-         <Modale reveals={reveals} hidden={toggle} />
+         <Modale reveals={reveals} hidden={toggle} currentId={idCheck} />
       </div>
    );
 };

@@ -8,9 +8,7 @@ import Modale from './Modale';
 
 import { useEffect } from "react";
 import axios from 'axios'
-import {
-   Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //import ToDoList from './ToDoList';
 //import data from './data.json';
@@ -56,7 +54,7 @@ const Kalender = () => {
             ).map(ele =>
                JSON.stringify(ele.name))
             )} */}
-            {date.toLocaleDateString('ru-RU')}
+            {date.toLocaleDateString('ru-RU')}git
             {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString('ru-RU')
             ).map(ele => <div key={ele._id}>
                {ele.name}
