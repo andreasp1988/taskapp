@@ -29,31 +29,21 @@ const Modale = ({ reveals, hidden, currentId }) => {
          <div className="overlay" />
          <div className="wrapper">
             <div className="modal">
-               {/* <p>Alle aufgaben für heute.{date.toLocaleDateString()} | </p><br/> */}
                {aufgabe && (
                   <div className="task">
                      <h4>{aufgabe.name}</h4>
                      <p>
-                        {aufgabe.datum} | {aufgabe.start}
+                        <img src="/calendrmodal.png" alt="" /> &nbsp;{' '}
+                        {aufgabe.datum} &nbsp; | &nbsp; {aufgabe.start}
                      </p>
 
                      <p>{aufgabe.beschreibung}</p>
                      <p>{aufgabe.kategorie}</p>
                   </div>
                )}
-               {/* <p>
-                     {currentId}
-                     Eine Beschreibung der Aufgabe. Dolor sit amet, consectetur
-                     adipiscing elit. Nulla eget nunc, leo quam. Posuere amet, enim
-                     nunc, nulla mauris in facilisi id fusce.
-                  </p>
-                  <br /> */}
-               {/* <div className="hero">
-                  <div className="circle"></div>
-                  <div className="fertig">Fertig</div>
-               </div> */}
+
                <span className="circle"></span>
-               <span className="fertig">Fertig</span>
+               <span className="fertig">Ausstehend</span>
 
                <button className="modalBtn1" onClick={deleteAufgabe}>
                   Löschen
