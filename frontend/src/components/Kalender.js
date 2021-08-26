@@ -8,33 +8,23 @@ import Modale from './Modale';
 
 import { useEffect } from 'react';
 import axios from 'axios';
-//import {
-// Link
-//} from "react-router-dom";
-
-//import ToDoList from './ToDoList';
-//import data from './data.json';
 
 const Kalender = () => {
    const [date, setDate] = useState(new Date());
-
-   //const [toDoList, setToDoList] = useState(data);
-   //modal
 
    const { reveals, toggle } = Kalendarmodale();
 
    const onChange = (newDate) => {
       setDate(newDate);
-      // setToDoList(data);
    };
 
    const [data, setData] = useState(null);
-   const [idCheck, setIdCheck] = useState(null)
+   const [idCheck, setIdCheck] = useState(null);
 
    const toggleAufgabe = (event) => {
-      setIdCheck(event.target.id)
-      toggle()
-   }
+      setIdCheck(event.target.id);
+      toggle();
+   };
 
    useEffect(() => {
       axios
@@ -42,8 +32,6 @@ const Kalender = () => {
          .then((result) => setData(result.data))
          .catch((err) => console.log(err));
    }, []);
-
-   //const onClick = (data){}
 
    return (
       <Fragment>
@@ -64,17 +52,21 @@ const Kalender = () => {
                      data
                         .filter(
                            (aufgabe) =>
-                              aufgabe.datum === date.toLocaleDateString('de-DE'),
+                              aufgabe.datum ===
+                              date.toLocaleDateString('de-DE'),
                         )
                         .map((ele) => (
                            <div key={ele._id}>
                               <input type="checkbox" /> {ele.name}{' '}
-                              <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
+                              <button
+                                 className="btnInfo"
+                                 onClick={toggleAufgabe}
+                                 id={ele._id}
+                              >
                                  i
                               </button>
                            </div>
                         ))}
-
                </div>
             </div>
             {/* {data && (data.map(aufgabe => <div key={aufgabe._id}>
@@ -96,7 +88,11 @@ const Kalender = () => {
                   .map((ele) => (
                      <div key={ele._id}>
                         <input type="checkbox" /> {ele.name}{' '}
-                        <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
+                        <button
+                           className="btnInfo"
+                           onClick={toggleAufgabe}
+                           id={ele._id}
+                        >
                            i
                         </button>
                      </div>
@@ -111,6 +107,7 @@ const Kalender = () => {
 };
 
 export default Kalender;
+<<<<<<< HEAD
 
 //<Modale reveals={reveals} hidden={toggle} />
 
@@ -123,3 +120,5 @@ export default Kalender;
 //    ))}
 // </div>
 
+=======
+>>>>>>> d8d47044d3f7bf0ce700311a942b524f4619fcdf

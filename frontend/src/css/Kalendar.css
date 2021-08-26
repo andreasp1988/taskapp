@@ -41,7 +41,7 @@ h1 {
    color: #333333;
    font-weight: 500;
 }
-.react-calendar button:hover {
+.react-calendar button:active {
    background: #f26950;
    border-radius: 45%;
 }
