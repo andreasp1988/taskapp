@@ -10,15 +10,15 @@
 }
 
 .box3 {
-   width: 70%;
-
+   width: 81%;
    color: #333;
    border: 2px solid #ddd;
    border-radius: 5px;
+   margin-top: 2vh;
 }
 .Fertig-box {
    cursor: pointer;
-   padding: 15px;
+   padding: 1.5rem;
    background: #5a55ca;
    border-radius: 5px;
 }
