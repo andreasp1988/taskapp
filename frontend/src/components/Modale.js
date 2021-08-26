@@ -38,8 +38,16 @@ const Modale = ({ reveals, hidden, currentId }) => {
                      </p>
 
                      <p>{aufgabe.beschreibung}</p>
-
-                     <p> {aufgabe.kategorie}</p>
+                     {aufgabe.kategorie === "Fertig" ? (
+                        <p><img src="/img/kreis-f.svg" alt="" />{aufgabe.kategorie}</p>
+                     ) : null}
+                     {aufgabe.kategorie === "In Bearbeitung" ? (
+                        <p><img src="/img/kreis-b.svg" alt="" />{aufgabe.kategorie}</p>
+                     ) : null}
+                     {aufgabe.kategorie === "Ausstehend" ? (
+                        <p><img src="/img/kreis-a.svg" alt="" />{aufgabe.kategorie}</p>
+                     ) : null}
+                     {/* <p><img src="/img/kreis.svg" alt="" />{aufgabe.kategorie}</p> */}
                   </div>
                )}
 

@@ -35,7 +35,7 @@ const Registration = () => {
                 <input type="text" name="email" placeholder="Email" value={inputs.email} onChange={handleInputs} />
                 <input type="password" name="password" placeholder="Passwort" value={inputs.password} onChange={handleInputs} />
                 <input type="password" name="password_True" placeholder="Passwort" value={inputs.password_True} onChange={handleInputs} />
-                <button onClick={saveUser} >Jetzt Anmelden</button>
+                <button onClick={saveUser} >Jetzt anmelden</button>
             </form>
         </div>
     );
