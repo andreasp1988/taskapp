@@ -52,12 +52,8 @@ const Kalender = () => {
                      data
                         .filter(
                            (aufgabe) =>
-<<<<<<< HEAD
                               aufgabe.datum ===
                               date.toLocaleDateString('de-DE'),
-=======
-                              aufgabe.datum === date.toLocaleDateString('de-DE'),
->>>>>>> 4f1d8d1a91efd65fadfadeab757ecb1f3727844c
                         )
                         .map((ele) => (
                            <div key={ele._id}>

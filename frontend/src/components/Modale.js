@@ -31,10 +31,12 @@ const Modale = ({ reveals, hidden, currentId }) => {
             <div className="modal">
                {/* <p>Alle aufgaben für heute.{date.toLocaleDateString()} | </p><br/> */}
                {aufgabe && (
-                  <div>
-                     <h3>{aufgabe.name}</h3>
-                     <p>{aufgabe.datum}</p>
-                     <p>{aufgabe.start}</p>
+                  <div className="task">
+                     <h4>{aufgabe.name}</h4>
+                     <p>
+                        {aufgabe.datum} | {aufgabe.start}
+                     </p>
+
                      <p>{aufgabe.beschreibung}</p>
                      <p>{aufgabe.kategorie}</p>
                   </div>
@@ -47,16 +49,18 @@ const Modale = ({ reveals, hidden, currentId }) => {
                   </p>
                   <br /> */}
                {/* <div className="hero">
-                     <div className="circle"></div>
-                     <div className="fertig">Fertig</div>
-                  </div> */}
-               {/* 
-                  <button className="modalBtn1" onClick={hidden}> */}
+                  <div className="circle"></div>
+                  <div className="fertig">Fertig</div>
+               </div> */}
+               <span className="circle"></span>
+               <span className="fertig">Fertig</span>
+
                <button className="modalBtn1" onClick={deleteAufgabe}>
                   Löschen
                </button>
                <br />
-
+               <button className="modalBtn2">Erledigt</button>
+               <br />
                <Link to={`/aufgaben/${currentId}`}>
                   <button className="modalBtn3">Bearbeiten</button>
                </Link>
