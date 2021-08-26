@@ -38,12 +38,13 @@ const Modale = ({ reveals, hidden, currentId }) => {
                      </p>
 
                      <p>{aufgabe.beschreibung}</p>
-                     <p>{aufgabe.kategorie}</p>
+
+                     <p> {aufgabe.kategorie}</p>
                   </div>
                )}
 
-               <span className="circle"></span>
-               <span className="fertig">Ausstehend</span>
+               {/* <span className="circle"></span>
+               <span className="fertig">Ausstehend</span> */}
 
                <button className="modalBtn1" onClick={deleteAufgabe}>
                   Löschen

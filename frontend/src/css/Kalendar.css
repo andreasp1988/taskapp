@@ -36,12 +36,28 @@
 .contain form {
    padding: 15px;
 }
-.kalender h1 {
-   font-size: 40px;
+.kalendar h1 {
+   /* font-size: 40px;
    color: #333333;
-   font-weight: 500;
+   font-weight: 500; */
+   text-align: left;
+   padding: 4vh 0 2vh 8%
 }
 .react-calendar button:active {
    background: #f26950;
    border-radius: 45%;
+}
+
+.kalendar .contain{
+   margin: 1vh 5%;
+   border-radius: 5px;
+   padding-bottom: 5vh;
+}
+
+.kalendar p{
+   padding: 2vh 0 2vh 5%;
+}
+
+.kalendar .contain div{
+   padding-left: 5%;
 }

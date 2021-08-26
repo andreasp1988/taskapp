@@ -58,13 +58,14 @@ const Kalender = () => {
                         .map((ele) => (
                            <div key={ele._id}>
                               <input type="checkbox" /> {ele.name}{' '}
-                              <button
+                              < img src="/img/info.png" alt="" onClick={toggleAufgabe} id={ele._id} />
+                              {/* <button
                                  className="btnInfo"
                                  onClick={toggleAufgabe}
                                  id={ele._id}
                               >
                                  i
-                              </button>
+                              </button> */}
                            </div>
                         ))}
                </div>
