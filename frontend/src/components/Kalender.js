@@ -43,6 +43,28 @@ const Kalender = () => {
                <Calendar onChange={onChange} />
                <div className="contain">
                   <p>Alle aufgaben für heute den {date.toLocaleDateString()}</p>
+                  {/* {date.toLocaleDateString('de-DE')}
+                  {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString()
+                  ).map(ele => <div key={ele._id}>
+                     {ele.name}
+                  </div>
+                  )
+                  )} */}
+                  {data &&
+                     data
+                        .filter(
+                           (aufgabe) =>
+                              aufgabe.datum === date.toLocaleDateString('ru-RU'),
+                        )
+                        .map((ele) => (
+                           <div key={ele._id}>
+                              <input type="checkbox" /> {ele.name}{' '}
+                              <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
+                                 i
+                              </button>
+                           </div>
+                        ))}
+
                </div>
             </div>
             {/* {data && (data.map(aufgabe => <div key={aufgabe._id}>
@@ -54,20 +76,38 @@ const Kalender = () => {
             ).map(ele =>
                JSON.stringify(ele.name))
             )} */}
-            {date.toLocaleDateString('ru-RU')}
-            {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString('ru-RU')
-            ).map(ele => <div key={ele._id}>
-               {ele.name}
-            </div>
-            )
-            )}
-
-
-            <Modale reveals={reveals} hidden={toggle} />
-
-            <Nav />
+<<<<<<< HEAD
+         {date.toLocaleDateString('ru-RU')}
+         {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString('ru-RU')
+         ).map(ele => <div key={ele._id}>
+            {ele.name}
          </div>
-      </Fragment>
+         )
+         )}
+
+=======
+            {/* 
+            {data &&
+               data
+                  .filter(
+                     (aufgabe) =>
+                        aufgabe.datum === date.toLocaleDateString('ru-RU'),
+                  )
+                  .map((ele) => (
+                     <div key={ele._id}>
+                        <input type="checkbox" /> {ele.name}{' '}
+                        <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
+                           i
+                        </button>
+                     </div>
+                  ))} */}
+>>>>>>> c2829c06eed98029d3fe1c7ad2ff7ae11367384b
+
+         <Modale reveals={reveals} hidden={toggle} />
+
+         <Nav />
+         </div>
+      </Fragment >
    );
 };
 
