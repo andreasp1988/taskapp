@@ -10,15 +10,14 @@
 }
 
 .box {
-   width: 70%;
-
+   width: 80%;
    color: #333;
    border: 2px solid #ddd;
    border-radius: 5px;
 }
 .Bearbeitung-box {
    cursor: pointer;
-   padding: 15px;
+   padding: 1.5rem;
    background: #f26950;
    border-radius: 5px;
 }

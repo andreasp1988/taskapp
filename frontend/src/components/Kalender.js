@@ -107,3 +107,14 @@ const Kalender = () => {
 };
 
 export default Kalender;
+
+//<Modale reveals={reveals} hidden={toggle} />
+
+// {data &&
+//    data.map((aufgabe) => (
+//       <div key={aufgabe._id}>
+//          <input type="checkbox" /*value={aufgabe.name}*/ />
+//          <label>{aufgabe.name}</label>
+//       </div>
+//    ))}
+// </div>
