@@ -17,6 +17,13 @@ const Modale = ({ reveals, hidden, currentId }) => {
          .catch((err) => console.log(err));
    });
 
+   const deleteAufgabe = () => {
+      axios
+         .delete(`/api/aufgabe/${currentId}`)
+         .then((result) => (window.location.href = result.data.redirect))
+         .catch((err) => console.log(err));
+   };
+
    return reveals ? (
       <Fragment>
          <div className="overlay" />
@@ -43,17 +50,13 @@ const Modale = ({ reveals, hidden, currentId }) => {
                      <div className="circle"></div>
                      <div className="fertig">Fertig</div>
                   </div> */}
-
-               <button className="modalBtn1" onClick={hidden}>
+               {/* 
+                  <button className="modalBtn1" onClick={hidden}> */}
+               <button className="modalBtn1" onClick={deleteAufgabe}>
                   Löschen
                </button>
                <br />
-               <Link to="/home">
-                  <button className="modalBtn2" onClick={hidden}>
-                     Erledigt
-                  </button>
-                  <br />
-               </Link>
+
                <Link to={`/aufgaben/${currentId}`}>
                   <button className="modalBtn3">Bearbeiten</button>
                </Link>
