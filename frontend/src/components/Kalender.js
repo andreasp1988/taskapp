@@ -8,24 +8,14 @@ import Modale from './Modale';
 
 import { useEffect } from 'react';
 import axios from 'axios';
-//import {
-// Link
-//} from "react-router-dom";
-
-//import ToDoList from './ToDoList';
-//import data from './data.json';
 
 const Kalender = () => {
    const [date, setDate] = useState(new Date());
-
-   //const [toDoList, setToDoList] = useState(data);
-   //modal
 
    const { reveals, toggle } = Kalendarmodale();
 
    const onChange = (newDate) => {
       setDate(newDate);
-      // setToDoList(data);
    };
 
    const [data, setData] = useState(null);
@@ -37,8 +27,6 @@ const Kalender = () => {
          .catch((err) => console.log(err));
    }, []);
 
-   //const onClick = (data){}
-
    return (
       <Fragment>
          <div className="kalendar">
@@ -47,32 +35,24 @@ const Kalender = () => {
                <Calendar onChange={onChange} />
                <div className="contain">
                   <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
+
+                  {data &&
+                     data
+                        .filter(
+                           (aufgabe) =>
+                              aufgabe.datum ===
+                              date.toLocaleDateString('ru-RU'),
+                        )
+                        .map((ele) => (
+                           <div key={ele._id}>
+                              <input type="checkbox" /> {ele.name}{' '}
+                              <button className="btnInfo" onClick={toggle}>
+                                 i
+                              </button>
+                           </div>
+                        ))}
                </div>
             </div>
-            {/* {data && (data.map(aufgabe => <div key={aufgabe._id}>
-               <Link to={`/aufgaben/${aufgabe._id}`}>
-                  {aufgabe.name}
-               </Link>
-            </div>))} */}
-            {/* {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString()
-            ).map(ele =>
-               JSON.stringify(ele.name))
-            )} */}
-
-            {data &&
-               data
-                  .filter(
-                     (aufgabe) =>
-                        aufgabe.datum === date.toLocaleDateString('ru-RU'),
-                  )
-                  .map((ele) => (
-                     <div key={ele._id}>
-                        <input type="checkbox" /> {ele.name}{' '}
-                        <button className="btnInfo" onClick={toggle}>
-                           i
-                        </button>
-                     </div>
-                  ))}
 
             <Modale reveals={reveals} hidden={toggle} />
 
@@ -83,14 +63,3 @@ const Kalender = () => {
 };
 
 export default Kalender;
-
-//<Modale reveals={reveals} hidden={toggle} />
-
-// {data &&
-//    data.map((aufgabe) => (
-//       <div key={aufgabe._id}>
-//          <input type="checkbox" /*value={aufgabe.name}*/ />
-//          <label>{aufgabe.name}</label>
-//       </div>
-//    ))}
-// </div>

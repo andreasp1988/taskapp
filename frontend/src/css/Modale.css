@@ -1,81 +1,92 @@
 .overlay {
-   backdrop-filter: blur(15px);
-   background-color: rgba(182, 182, 182, 0.2);
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+   cursor: pointer;
 }
 .wrapper {
    height: 500px;
    width: 65%;
-   background: gray;
+   background: #ffffff;
    border-radius: 5px;
-   transform: translate(5%, -60%);
-   display: flex;
-   align-items: center;
-   justify-content: space-evenly;
+   transform: translate(-50%, -50%);
+   position: absolute;
+   top: 50%;
+   left: 50%;
 }
 
 .Modal {
    height: inherit;
    border-radius: 5px;
    box-shadow: 0px 5px 5px rgba(90, 85, 202, 0.5);
-   display: flex;
-   justify-content: space-evenly;
+   width: 65%;
+   background: #ffffff;
+   border-radius: 5px;
+   transform: translate(-50%, -50%);
+   position: absolute;
+   top: 50%;
+   left: 50%;
 }
 
-.hero,
-p {
-   display: flex;
-   flex-direction: row;
-   margin-left: 10%;
+.modal div,
+h4 {
+   transform: translate(-50%, -50%);
+   position: absolute;
+   top: 60%;
+   left: 50%;
+}
+.hero {
+   position: inherit;
+   top: 53%;
+   left: 15%;
 }
 .circle {
-   display: flex;
+   position: absolute;
+
+   left: 2%;
    width: 20px;
    height: 20px;
    background: rgba(90, 85, 202, 1);
    border-radius: 50%;
 }
 .fertig {
-   display: flex;
-   padding-left: 15px;
+   position: absolute;
+   left: 3%;
    width: 20px;
    height: 20px;
 }
 
 .modalBtn1 {
-   display: flex;
-   align-items: center;
+   position: absolute;
    width: 80%;
    height: 35px;
    color: #333;
    border: 2px solid rgba(90, 85, 202, 0.5);
-
+   top: 70%;
    border-radius: 5px;
-   margin-top: 10px;
+
    background: rgba(90, 85, 202, 0.5);
-   margin-top: 15;
-   margin-left: 10%;
 }
 .modalBtn2 {
-   display: flex;
-   align-items: center;
+   position: absolute;
+   top: 71%;
    width: 80%;
    height: 35px;
    color: #333;
    background: #fff;
    border: 2px solid rgba(90, 85, 202, 0.5);
    border-radius: 5px;
-   margin-top: 10px;
-   margin-left: 10%;
 }
 .modalBtn3 {
-   display: flex;
-   align-items: center;
+   position: absolute;
+   top: 72%;
    width: 80%;
    height: 35px;
    color: #333;
    background: #fff;
    border: 2px solid rgba(90, 85, 202, 0.5);
    border-radius: 5px;
-   margin-top: 10px;
-   margin-left: 10%;
 }
