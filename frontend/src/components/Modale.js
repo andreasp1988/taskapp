@@ -34,7 +34,7 @@ const Modale = ({ reveals, hidden, currentId }) => {
                      <h4>{aufgabe.name}</h4>
                      <p>
                         <img src="/calendrmodal.png" alt="" /> &nbsp;{' '}
-                        {aufgabe.datum} &nbsp; | &nbsp; {aufgabe.start}
+                        {aufgabe.datum} &nbsp; | &nbsp; {aufgabe.start} Uhr
                      </p>
 
                      <p>{aufgabe.beschreibung}</p>

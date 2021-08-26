@@ -9,7 +9,7 @@
 }
 .wrapper {
    height: 500px;
-   width: 65%;
+   width: 90%;
    background: #ffffff;
    border-radius: 5px;
    transform: translate(-50%, -50%);
@@ -66,33 +66,52 @@ h4 {
 .modalBtn1 {
    position: absolute;
    width: 80%;
-   height: 35px;
+   /* height: 35px; */
    color: #333;
    border: 2px solid rgba(90, 85, 202, 0.5);
-   top: 70%;
+   top: 65%;
    border-radius: 5px;
    left: 9%;
    background: rgba(90, 85, 202, 0.5);
+   font-size: 1.5rem;
+   font-family: Roboto;
+   padding: 1vh 0;
+   margin-bottom: 2vh;
 }
 .modalBtn2 {
    position: absolute;
-   top: 78%;
+   top: 76%;
    width: 80%;
-   height: 35px;
+   /* height: 35px; */
    color: #333;
    background: #fff;
    border: 2px solid rgba(90, 85, 202, 0.5);
    border-radius: 5px;
    left: 9%;
+   font-size: 1.5rem;
+   font-family: Roboto;
+   padding: 1vh 0;
 }
 .modalBtn3 {
    position: absolute;
-   top: 86%;
+   top: 87%;
    width: 80%;
-   height: 35px;
+   /* height: 35px; */
    color: #333;
    background: #fff;
    border: 2px solid rgba(90, 85, 202, 0.5);
    border-radius: 5px;
    left: 9%;
+   font-size: 1.5rem;
+   font-family: Roboto;
+   padding: 1vh 0;
+}
+
+.task h4{
+   font-size: 1.5rem;
+   font-family: Roboto;
+
+}
+.task img{
+   width: 6%;
 }
