@@ -76,36 +76,18 @@ const Kalender = () => {
             ).map(ele =>
                JSON.stringify(ele.name))
             )} */}
-<<<<<<< HEAD
-         {date.toLocaleDateString('ru-RU')}
-         {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString('ru-RU')
-         ).map(ele => <div key={ele._id}>
-            {ele.name}
-         </div>
-         )
-         )}
+            {date.toLocaleDateString('ru-RU')}
+            {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString('ru-RU')
+            ).map(ele => <div key={ele._id}>
+               {ele.name}
+            </div>
+            )
+            )}
 
-=======
-            {/* 
-            {data &&
-               data
-                  .filter(
-                     (aufgabe) =>
-                        aufgabe.datum === date.toLocaleDateString('ru-RU'),
-                  )
-                  .map((ele) => (
-                     <div key={ele._id}>
-                        <input type="checkbox" /> {ele.name}{' '}
-                        <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
-                           i
-                        </button>
-                     </div>
-                  ))} */}
->>>>>>> c2829c06eed98029d3fe1c7ad2ff7ae11367384b
 
-         <Modale reveals={reveals} hidden={toggle} />
+            <Modale reveals={reveals} hidden={toggle} />
 
-         <Nav />
+            <Nav />
          </div>
       </Fragment >
    );
