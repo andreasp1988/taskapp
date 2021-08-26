@@ -52,7 +52,7 @@ const Kalender = () => {
             <div className="kalendercontainer">
                <Calendar onChange={onChange} />
                <div className="contain">
-                  <p>Alle aufgaben für heute den {date.toLocaleDateString()}</p>
+                  <p>Alle aufgaben für den {date.toLocaleDateString()}</p>
                   {/* {date.toLocaleDateString('de-DE')}
                   {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString()
                   ).map(ele => <div key={ele._id}>
