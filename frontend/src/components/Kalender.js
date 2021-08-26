@@ -53,13 +53,28 @@ const Kalender = () => {
                <Calendar onChange={onChange} />
                <div className="contain">
                   <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
-                  {date.toLocaleDateString('de-DE')}
+                  {/* {date.toLocaleDateString('de-DE')}
                   {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString()
                   ).map(ele => <div key={ele._id}>
                      {ele.name}
                   </div>
                   )
-                  )}
+                  )} */}
+                  {data &&
+                     data
+                        .filter(
+                           (aufgabe) =>
+                              aufgabe.datum === date.toLocaleDateString('ru-RU'),
+                        )
+                        .map((ele) => (
+                           <div key={ele._id}>
+                              <input type="checkbox" /> {ele.name}{' '}
+                              <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
+                                 i
+                              </button>
+                           </div>
+                        ))}
+
                </div>
             </div>
             {/* {data && (data.map(aufgabe => <div key={aufgabe._id}>
@@ -71,7 +86,7 @@ const Kalender = () => {
             ).map(ele =>
                JSON.stringify(ele.name))
             )} */}
-
+            {/* 
             {data &&
                data
                   .filter(
@@ -85,7 +100,7 @@ const Kalender = () => {
                            i
                         </button>
                      </div>
-                  ))}
+                  ))} */}
 
             <Modale reveals={reveals} hidden={toggle} currentId={idCheck} />
 
