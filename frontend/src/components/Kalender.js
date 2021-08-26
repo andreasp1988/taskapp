@@ -19,6 +19,12 @@ const Kalender = () => {
    };
 
    const [data, setData] = useState(null);
+   const [idCheck, setIdCheck] = useState(null);
+
+   const toggleAufgabe = (event) => {
+      setIdCheck(event.target.id);
+      toggle();
+   };
 
    useEffect(() => {
       axios
@@ -35,26 +41,46 @@ const Kalender = () => {
                <Calendar onChange={onChange} />
                <div className="contain">
                   <p>Alle aufgaben für heute.{date.toLocaleDateString()}</p>
-
+                  {date.toLocaleDateString('de-DE')}
                   {data &&
                      data
                         .filter(
                            (aufgabe) =>
-                              aufgabe.datum ===
-                              date.toLocaleDateString('ru-RU'),
+                              aufgabe.datum === date.toLocaleDateString(),
                         )
-                        .map((ele) => (
-                           <div key={ele._id}>
-                              <input type="checkbox" /> {ele.name}{' '}
-                              <button className="btnInfo" onClick={toggle}>
-                                 i
-                              </button>
-                           </div>
-                        ))}
+                        .map((ele) => <div key={ele._id}>{ele.name}</div>)}
                </div>
             </div>
+            {/* {data && (data.map(aufgabe => <div key={aufgabe._id}>
+               <Link to={`/aufgaben/${aufgabe._id}`}>
+                  {aufgabe.name}
+               </Link>
+            </div>))} */}
+            {/* {data && (data.filter((aufgabe) => aufgabe.datum === date.toLocaleDateString()
+            ).map(ele =>
+               JSON.stringify(ele.name))
+            )} */}
 
-            <Modale reveals={reveals} hidden={toggle} />
+            {data &&
+               data
+                  .filter(
+                     (aufgabe) =>
+                        aufgabe.datum === date.toLocaleDateString('ru-RU'),
+                  )
+                  .map((ele) => (
+                     <div key={ele._id}>
+                        <input type="checkbox" /> {ele.name}{' '}
+                        <button
+                           className="btnInfo"
+                           onClick={toggleAufgabe}
+                           id={ele._id}
+                        >
+                           i
+                        </button>
+                     </div>
+                  ))}
+
+            <Modale reveals={reveals} hidden={toggle} currentId={idCheck} />
 
             <Nav />
          </div>

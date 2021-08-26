@@ -8,6 +8,12 @@ function FertigAufgaben() {
    const { reveals, toggle } = Kalendarmodale();
 
    const [data, setData] = useState(null);
+   const [idCheck, setIdCheck] = useState(null)
+
+   const toggleAufgabe = (event) => {
+      setIdCheck(event.target.id)
+      toggle()
+   }
 
    useEffect(() => {
       axios
@@ -25,13 +31,13 @@ function FertigAufgaben() {
                   .map((ele) => (
                      <div key={ele._id}>
                         <input type="checkbox" /> {ele.name}{' '}
-                        <button className="btnInfo" onClick={toggle}>
+                        <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
                            i
                         </button>
                      </div>
                   ))}
          </Accordion>
-         <Modale reveals={reveals} hidden={toggle} />
+         <Modale reveals={reveals} hidden={toggle} currentId={idCheck} />
       </div>
    );
 }
