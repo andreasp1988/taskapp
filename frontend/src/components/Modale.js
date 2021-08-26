@@ -49,7 +49,10 @@ const Modale = ({ reveals, hidden, currentId }) => {
                   Löschen
                </button>
                <br />
-               <button className="modalBtn2">Erledigt</button>
+               <Link to="/home">
+                  <button className="modalBtn2" onClick={hidden}>Erledigt</button>
+               </Link>
+               {/* <button className="modalBtn2">Erledigt</button> */}
                <br />
                <Link to={`/aufgaben/${currentId}`}>
                   <button className="modalBtn3">Bearbeiten</button>
