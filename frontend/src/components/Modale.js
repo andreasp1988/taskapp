@@ -9,12 +9,17 @@ import axios from 'axios';
 
 const Modale = ({ reveals, hidden, currentId }) => {
    const [aufgabe, setAufgabe] = useState(null);
+   // const [inputs, setInputs] = useState({ name: "", datum: "", start: "", ende: "", beschreibung: "", kategorie: "" });
 
    useEffect(() => {
-      axios
-         .get(`/api/aufgabe/${currentId}`)
-         .then((result) => setAufgabe(result.data))
-         .catch((err) => console.log(err));
+      if (reveals) {
+         if (!aufgabe) {
+            axios
+               .get(`/api/aufgabe/${currentId}`)
+               .then((result) => setAufgabe(result.data))
+               .catch((err) => console.log(err));
+         }
+      }
    });
 
    const deleteAufgabe = () => {
@@ -23,6 +28,18 @@ const Modale = ({ reveals, hidden, currentId }) => {
          .then((result) => (window.location.href = result.data.redirect))
          .catch((err) => console.log(err));
    };
+
+   const handleErledigt = () => {
+      let inputs = { name: aufgabe.name, datum: aufgabe.datum, start: aufgabe.start, ende: aufgabe.ende, beschreibung: aufgabe.beschreibung, kategorie: "Fertig" }
+      updateAufgabe(inputs)
+   }
+
+   const updateAufgabe = (inputs) => {
+
+      axios.put(`/api/aufgabe/${currentId}`, inputs)
+         .then(result => window.location.href = result.data.redirect)
+         .catch(err => console.log(err))
+   }
 
    return reveals ? (
       <Fragment>
@@ -58,8 +75,8 @@ const Modale = ({ reveals, hidden, currentId }) => {
                   Löschen
                </button>
                <br />
-               <Link to="/home">
-                  <button className="modalBtn2" onClick={hidden}>Erledigt</button>
+               <Link to="/home" >
+                  <button className="modalBtn2" onClick={handleErledigt}>Erledigt</button>
                </Link>
                {/* <button className="modalBtn2">Erledigt</button> */}
                <br />

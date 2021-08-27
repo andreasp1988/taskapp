@@ -18,9 +18,11 @@ const UpdateAufgabe = () => {
     let { id } = useParams()
     console.log(id)
     useEffect(() => {
-        axios.get(`/api/aufgabe/${id}`)
-            .then(result => setAufgabe(result.data))
-            .catch((err) => console.log(err))
+        if (!aufgabe) {
+            axios.get(`/api/aufgabe/${id}`)
+                .then(result => setAufgabe(result.data))
+                .catch((err) => console.log(err))
+        }
     })
 
     return (
