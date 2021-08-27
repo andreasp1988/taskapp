@@ -30,7 +30,16 @@ function FertigAufgaben() {
                   .filter((aufgabe) => aufgabe.kategorie === 'Fertig')
                   .map((ele) => (
                      <div key={ele._id}>
-                        <input type="checkbox" /> {ele.name}{' '}
+                        {ele.kategorie === "Fertig" ? (
+                           <span>
+                              <input type="checkbox" checked /> {ele.name}{' '}
+                           </span>
+                        ) :
+                           <span>
+                              <input type="checkbox" /> {ele.name}{' '}
+                           </span>
+                        }
+                        {/* <input type="checkbox" /> {ele.name}{' '} */}
                         < img src="/img/info.png" alt="" onClick={toggleAufgabe} id={ele._id} />
                         {/* <button className="btnInfo" onClick={toggleAufgabe} id={ele._id}>
                            i

@@ -61,3 +61,8 @@
 .kalendar .contain div{
    padding-left: 5%;
 }
+
+.react-calendar__navigation__label__labelText {
+   font-size: 1.25rem;
+   font-family: Roboto;
+}

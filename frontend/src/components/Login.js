@@ -8,7 +8,7 @@ const Login = () => {
         <div className="login">
             <LoginHeader />
             <section className="flex">
-                <ButtonEinlog name="Einloggen mit Google" />
+                <ButtonEinlog name="Einloggen mit Google" link="/auth/google" />
                 <ButtonEinlog name="Einloggen mit Email" />
                 <Link to="/registration">Noch keinen Account? Hier registrieren.</Link>
             </section>
