@@ -22,14 +22,11 @@ input::-webkit-input-placeholder {
     color: #fff;
     font-weight: bold;
     font: bold 1.25rem Roboto;
-<<<<<<< HEAD
-    width: 81%;
+    width: 80%;
     margin: 0 auto;
     padding: 5%;
-=======
     margin: 1vh 9%;
     padding: 2vh 4%;
     border-radius: 5px;
     border:none;
->>>>>>> 6ef3f15d56a0ceb4858d8e898034d6110fcd6f5d
 }
