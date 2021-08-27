@@ -25,6 +25,12 @@ router.post('/aufgabe', (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.put('/aufgabe/:id', (req, res) => {
+    Aufgabe.findByIdAndUpdate(req.params.id, req.body)
+        .then(result => res.json({ redirect: "/home" }))
+        .catch(err => res.json(err))
+})
+
 router.delete('/aufgabe/:id', (req, res) => {
     Aufgabe.findByIdAndDelete(req.params.id)
         .then(result => res.json({ redirect: "/home" }))

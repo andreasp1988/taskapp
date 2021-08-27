@@ -115,3 +115,7 @@ h4 {
 .task img{
    width: 6%;
 }
+
+.task p{
+   margin: 0 2%;
+}

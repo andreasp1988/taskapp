@@ -9,25 +9,27 @@ import axios from 'axios';
 
 //defaults.global.tooltips.enabled = false;
 //defaults.global.labels.display = 'false';
-const data1 = {
-   //labels: [ "Alleaufgaben",'Ausstehend', 'Fertig', 'In Bearbeitung'],
-   datasets: [
-      {
-         label: '# of votes',
-         data: ['5', '5', '5', '25'],
-         backgroundColor: [
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255,255,255,1)',
-         ],
-         borderWidth: 1,
-      },
-   ],
-};
+// const data1 = {
+//    //labels: [ "Alleaufgaben",'Ausstehend', 'Fertig', 'In Bearbeitung'],
+//    datasets: [
+//       {
+//          label: '# of votes',
+//          data: ['5', '5', '5', '25'],
+//          backgroundColor: [
+//             'rgba(44, 192, 156, 1)',
+//             'rgba(90, 85, 202, 1)',
+//             'rgba(242, 105, 80, 1)',
+//             'rgba(255,255,255,1)',
+//          ],
+//          borderWidth: 1,
+//       },
+//    ],
+// };
 
 const Aufgaben = () => {
    const { reveals, toggle } = Kalendarmodale();
+
+   const [pieData, setPieData] = useState(null);
 
    const [data, setData] = useState(null);
    const [idCheck, setIdCheck] = useState(null)
@@ -38,19 +40,55 @@ const Aufgaben = () => {
       // console.log(event)
       // console.log(event.target.id)
    }
+
+   const calculatePie = (inputData) => {
+      if (!inputData) {
+         return
+      }
+
+      let total = inputData.length;
+      let erledigten = inputData.filter((aufgabe) => aufgabe.kategorie === 'Fertig').length;
+      let inBearbeitung = inputData.filter((aufgabe) => aufgabe.kategorie === 'In Bearbeitung').length;
+      let aufstehenden = inputData.filter((aufgabe) => aufgabe.kategorie === 'Ausstehend').length;
+
+      let dataset = [aufstehenden, inBearbeitung, erledigten, total];
+
+      let newPieData = {
+         //         labels: ['Ausstehend', 'In Bearbeitung', 'Fertig'],
+         datasets: [
+            {
+               label: '# of votes',
+               data: dataset,
+               backgroundColor: [
+                  'rgba(242, 105, 80, 1)',
+                  'rgba(44, 192, 156, 1)',
+                  'rgba(90, 85, 202, 1)',
+                  'rgba(255,255,255,1)',
+               ],
+               borderWidth: 1,
+            },
+         ],
+      };
+      setPieData(newPieData)
+   }
+
    useEffect(() => {
       axios
          .get('/api/aufgabe')
-         .then((result) => setData(result.data))
+         .then((result) => {
+            setData(result.data)
+            calculatePie(result.data)
+         })
          .catch((err) => console.log(err));
    }, []);
+
 
    return (
       <div className="Alleaufgaben">
          <div className="PieChart">
             <div style={{ height: '200px', width: '200px' }}>
                <Pie
-                  data={data1}
+                  data={pieData}
                   options={{
                      responsive: true,
                      title: { text: '# of votes' },
